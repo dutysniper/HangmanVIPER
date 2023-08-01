@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		914ACA9F2A7553E2000B53AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACA9E2A7553E2000B53AB /* AppDelegate.swift */; };
 		914ACAA12A7553E2000B53AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAA02A7553E2000B53AB /* SceneDelegate.swift */; };
-		914ACAA32A7553E2000B53AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAA22A7553E2000B53AB /* ViewController.swift */; };
-		914ACAA62A7553E2000B53AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAA42A7553E2000B53AB /* Main.storyboard */; };
+		914ACAA32A7553E2000B53AB /* ModeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAA22A7553E2000B53AB /* ModeSelectionView.swift */; };
 		914ACAA82A7553E2000B53AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAA72A7553E2000B53AB /* Assets.xcassets */; };
 		914ACAAB2A7553E2000B53AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAA92A7553E2000B53AB /* LaunchScreen.storyboard */; };
+		914ACABA2A755A8A000B53AB /* ModeSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAB92A755A8A000B53AB /* ModeSelectionRouter.swift */; };
+		914ACABC2A755ABC000B53AB /* ModeSelectionButtonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACABB2A755ABC000B53AB /* ModeSelectionButtonEntity.swift */; };
+		914ACABE2A755D09000B53AB /* ModeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACABD2A755D09000B53AB /* ModeSelectionPresenter.swift */; };
+		914ACAC02A755DCC000B53AB /* ModeSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACABF2A755DCC000B53AB /* ModeSelectionInteractor.swift */; };
+		914ACAC52A75890C000B53AB /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAC42A75890C000B53AB /* ButtonFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		914ACA9B2A7553E2000B53AB /* HangmanVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangmanVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		914ACA9E2A7553E2000B53AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		914ACAA02A7553E2000B53AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		914ACAA22A7553E2000B53AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		914ACAA52A7553E2000B53AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		914ACAA22A7553E2000B53AB /* ModeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionView.swift; sourceTree = "<group>"; };
 		914ACAA72A7553E2000B53AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		914ACAAA2A7553E2000B53AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		914ACAAC2A7553E2000B53AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		914ACAB92A755A8A000B53AB /* ModeSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionRouter.swift; sourceTree = "<group>"; };
+		914ACABB2A755ABC000B53AB /* ModeSelectionButtonEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionButtonEntity.swift; sourceTree = "<group>"; };
+		914ACABD2A755D09000B53AB /* ModeSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionPresenter.swift; sourceTree = "<group>"; };
+		914ACABF2A755DCC000B53AB /* ModeSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionInteractor.swift; sourceTree = "<group>"; };
+		914ACAC42A75890C000B53AB /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,99 @@
 		914ACA9D2A7553E2000B53AB /* HangmanVIPER */ = {
 			isa = PBXGroup;
 			children = (
-				914ACA9E2A7553E2000B53AB /* AppDelegate.swift */,
-				914ACAA02A7553E2000B53AB /* SceneDelegate.swift */,
-				914ACAA22A7553E2000B53AB /* ViewController.swift */,
-				914ACAA42A7553E2000B53AB /* Main.storyboard */,
-				914ACAA72A7553E2000B53AB /* Assets.xcassets */,
+				914ACAC32A7588F6000B53AB /* Helpers */,
+				914ACAC12A7588A1000B53AB /* Modules */,
+				914ACAB22A755963000B53AB /* App */,
+				914ACAC22A7588C6000B53AB /* Resources */,
 				914ACAA92A7553E2000B53AB /* LaunchScreen.storyboard */,
-				914ACAAC2A7553E2000B53AB /* Info.plist */,
 			);
 			path = HangmanVIPER;
+			sourceTree = "<group>";
+		};
+		914ACAB22A755963000B53AB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				914ACA9E2A7553E2000B53AB /* AppDelegate.swift */,
+				914ACAA02A7553E2000B53AB /* SceneDelegate.swift */,
+				914ACAAC2A7553E2000B53AB /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		914ACAB32A7559B9000B53AB /* ModeSelectionModule */ = {
+			isa = PBXGroup;
+			children = (
+				914ACAB42A7559F1000B53AB /* Router */,
+				914ACAB52A755A00000B53AB /* Entity */,
+				914ACAB62A755A11000B53AB /* Interactor */,
+				914ACAB72A755A24000B53AB /* Presenter */,
+				914ACAB82A755A2F000B53AB /* View */,
+			);
+			path = ModeSelectionModule;
+			sourceTree = "<group>";
+		};
+		914ACAB42A7559F1000B53AB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				914ACAB92A755A8A000B53AB /* ModeSelectionRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		914ACAB52A755A00000B53AB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				914ACABB2A755ABC000B53AB /* ModeSelectionButtonEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		914ACAB62A755A11000B53AB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				914ACABF2A755DCC000B53AB /* ModeSelectionInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		914ACAB72A755A24000B53AB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				914ACABD2A755D09000B53AB /* ModeSelectionPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		914ACAB82A755A2F000B53AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				914ACAA22A7553E2000B53AB /* ModeSelectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		914ACAC12A7588A1000B53AB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				914ACAB32A7559B9000B53AB /* ModeSelectionModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		914ACAC22A7588C6000B53AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				914ACAA72A7553E2000B53AB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		914ACAC32A7588F6000B53AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				914ACAC42A75890C000B53AB /* ButtonFactory.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +219,6 @@
 			files = (
 				914ACAAB2A7553E2000B53AB /* LaunchScreen.storyboard in Resources */,
 				914ACAA82A7553E2000B53AB /* Assets.xcassets in Resources */,
-				914ACAA62A7553E2000B53AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +229,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				914ACAA32A7553E2000B53AB /* ViewController.swift in Sources */,
+				914ACAC02A755DCC000B53AB /* ModeSelectionInteractor.swift in Sources */,
+				914ACABA2A755A8A000B53AB /* ModeSelectionRouter.swift in Sources */,
+				914ACAC52A75890C000B53AB /* ButtonFactory.swift in Sources */,
+				914ACAA32A7553E2000B53AB /* ModeSelectionView.swift in Sources */,
 				914ACA9F2A7553E2000B53AB /* AppDelegate.swift in Sources */,
 				914ACAA12A7553E2000B53AB /* SceneDelegate.swift in Sources */,
+				914ACABE2A755D09000B53AB /* ModeSelectionPresenter.swift in Sources */,
+				914ACABC2A755ABC000B53AB /* ModeSelectionButtonEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		914ACAA42A7553E2000B53AB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				914ACAA52A7553E2000B53AB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		914ACAA92A7553E2000B53AB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,10 +377,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q3W8P7J6DJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HangmanVIPER/Info.plist;
+				INFOPLIST_FILE = HangmanVIPER/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,10 +407,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q3W8P7J6DJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HangmanVIPER/Info.plist;
+				INFOPLIST_FILE = HangmanVIPER/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
