@@ -12,8 +12,13 @@ final class ButtonFactory {
         let button = UIButton()
         
         button.setTitle(entity.title, for: .normal)
-        button.tintColor = entity.titleColor
+        button.setTitleColor(entity.titleColor, for: .normal) 
         button.backgroundColor = entity.backgroundColor
+        button.layer.cornerRadius = 12
+        button.layer.masksToBounds = true
+        button.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        button.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        button.widthAnchor.constraint(lessThanOrEqualToConstant: 400).isActive = true
         return button
     }
 }
