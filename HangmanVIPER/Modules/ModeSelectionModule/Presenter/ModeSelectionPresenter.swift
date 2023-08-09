@@ -7,14 +7,34 @@
 
 import Foundation
 
-protocol ModeSelectionPresenterInput {
-
+protocol ModeSelectionPresenterProtocol: AnyObject {
+    var router: ModeSelectionRouterProtocol! { get set }
+    func configureView() // нужен или нет?
+    func singlePlayerButtonClicked()
+    func multiPlayerButtonClicked()
 }
 
-protocol ModeSelectionPresenterOutput {
+final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
+    var router: ModeSelectionRouterProtocol!
+    var interactor: ModeSelectionInteractorProtocol!
+    
+    private unowned let view: ModeSelectionViewProtocol
+    
+    required init(view: ModeSelectionViewProtocol) {
+        self.view = view
+    }
+    
+    func configureView() {
+        // нужен или нет?
+    }
+    
+    func singlePlayerButtonClicked() {
+        router.openSingleGameScreen()
+    }
+    
+    func multiPlayerButtonClicked() {
+        //TODO: - создать переход на мультиплеер
+    }
     
 }
 
-final class ModeSelectionPresenter {
-    
-}

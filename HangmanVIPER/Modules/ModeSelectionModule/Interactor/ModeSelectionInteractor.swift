@@ -5,16 +5,15 @@
 //  Created by Константин Натаров on 29.07.2023.
 //
 
-import Foundation
-
-protocol ModeSelectionInteractorInput {
+protocol ModeSelectionInteractorProtocol {
     
 }
 
-protocol ModeSelectionInteractorOutput {
+final class ModeSelectionInteractor: ModeSelectionInteractorProtocol {
+    weak var presenter: ModeSelectionPresenterProtocol!
     
-}
-
-final class ModeSelectionInteractor: ModeSelectionInteractorInput {
-    
-}
+    required init(presenter: ModeSelectionPresenterProtocol!) {
+        self.presenter = presenter
+    }
+  
+    }

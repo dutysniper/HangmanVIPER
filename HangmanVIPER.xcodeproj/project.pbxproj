@@ -13,10 +13,11 @@
 		914ACAA82A7553E2000B53AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAA72A7553E2000B53AB /* Assets.xcassets */; };
 		914ACAAB2A7553E2000B53AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAA92A7553E2000B53AB /* LaunchScreen.storyboard */; };
 		914ACABA2A755A8A000B53AB /* ModeSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAB92A755A8A000B53AB /* ModeSelectionRouter.swift */; };
-		914ACABC2A755ABC000B53AB /* ModeSelectionButtonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACABB2A755ABC000B53AB /* ModeSelectionButtonEntity.swift */; };
 		914ACABE2A755D09000B53AB /* ModeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACABD2A755D09000B53AB /* ModeSelectionPresenter.swift */; };
 		914ACAC02A755DCC000B53AB /* ModeSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACABF2A755DCC000B53AB /* ModeSelectionInteractor.swift */; };
 		914ACAC52A75890C000B53AB /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAC42A75890C000B53AB /* ButtonFactory.swift */; };
+		914ACAC82A825A26000B53AB /* ModeSelectionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAC72A825A26000B53AB /* ModeSelectionConfigurator.swift */; };
+		914ACACD2A83B5FF000B53AB /* SingleGameMainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACACC2A83B5FF000B53AB /* SingleGameMainScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +29,11 @@
 		914ACAAA2A7553E2000B53AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		914ACAAC2A7553E2000B53AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		914ACAB92A755A8A000B53AB /* ModeSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionRouter.swift; sourceTree = "<group>"; };
-		914ACABB2A755ABC000B53AB /* ModeSelectionButtonEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionButtonEntity.swift; sourceTree = "<group>"; };
 		914ACABD2A755D09000B53AB /* ModeSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionPresenter.swift; sourceTree = "<group>"; };
 		914ACABF2A755DCC000B53AB /* ModeSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionInteractor.swift; sourceTree = "<group>"; };
 		914ACAC42A75890C000B53AB /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		914ACAC72A825A26000B53AB /* ModeSelectionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionConfigurator.swift; sourceTree = "<group>"; };
+		914ACACC2A83B5FF000B53AB /* SingleGameMainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGameMainScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +88,8 @@
 		914ACAB32A7559B9000B53AB /* ModeSelectionModule */ = {
 			isa = PBXGroup;
 			children = (
+				914ACAC62A825A07000B53AB /* Configurator */,
 				914ACAB42A7559F1000B53AB /* Router */,
-				914ACAB52A755A00000B53AB /* Entity */,
 				914ACAB62A755A11000B53AB /* Interactor */,
 				914ACAB72A755A24000B53AB /* Presenter */,
 				914ACAB82A755A2F000B53AB /* View */,
@@ -101,14 +103,6 @@
 				914ACAB92A755A8A000B53AB /* ModeSelectionRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		914ACAB52A755A00000B53AB /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				914ACABB2A755ABC000B53AB /* ModeSelectionButtonEntity.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		914ACAB62A755A11000B53AB /* Interactor */ = {
@@ -138,6 +132,7 @@
 		914ACAC12A7588A1000B53AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				914ACAC92A83B595000B53AB /* SingleGameMainScreen */,
 				914ACAB32A7559B9000B53AB /* ModeSelectionModule */,
 			);
 			path = Modules;
@@ -157,6 +152,22 @@
 				914ACAC42A75890C000B53AB /* ButtonFactory.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		914ACAC62A825A07000B53AB /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				914ACAC72A825A26000B53AB /* ModeSelectionConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		914ACAC92A83B595000B53AB /* SingleGameMainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				914ACACC2A83B5FF000B53AB /* SingleGameMainScreenView.swift */,
+			);
+			path = SingleGameMainScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,12 +242,13 @@
 			files = (
 				914ACAC02A755DCC000B53AB /* ModeSelectionInteractor.swift in Sources */,
 				914ACABA2A755A8A000B53AB /* ModeSelectionRouter.swift in Sources */,
+				914ACAC82A825A26000B53AB /* ModeSelectionConfigurator.swift in Sources */,
 				914ACAC52A75890C000B53AB /* ButtonFactory.swift in Sources */,
+				914ACACD2A83B5FF000B53AB /* SingleGameMainScreenView.swift in Sources */,
 				914ACAA32A7553E2000B53AB /* ModeSelectionView.swift in Sources */,
 				914ACA9F2A7553E2000B53AB /* AppDelegate.swift in Sources */,
 				914ACAA12A7553E2000B53AB /* SceneDelegate.swift in Sources */,
 				914ACABE2A755D09000B53AB /* ModeSelectionPresenter.swift in Sources */,
-				914ACABC2A755ABC000B53AB /* ModeSelectionButtonEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

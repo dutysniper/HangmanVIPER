@@ -8,52 +8,24 @@
 import UIKit
 import SwiftUI
 
-protocol ModeSelectionViewInput: AnyObject {
-
-}
-
-protocol ModeSelectionViewOutput {
-    init(view: ModeSelectionViewInput)
-    func userSelectedMode()
+protocol ModeSelectionViewProtocol: AnyObject {
+    
 }
 
 
-class ModeSelectionView: UIViewController, ModeSelectionViewInput {
-    let buttonFactory = ButtonFactory()
-
+class ModeSelectionView: UIViewController, ModeSelectionViewProtocol {
+    var presenter: ModeSelectionPresenterProtocol!
+    var configurator: ModeSelectionConfiguratorProtocol = ModeSelectionConfigurator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-
-        let redButtonEntity = ModeSelectionButtonEntity(
-            title: "Одиночная игра",
-            titleColor: .white,
-            backgroundColor: UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0)
-        )
-
-        let blueButtonEntity = ModeSelectionButtonEntity(
-            title: "Мультиплеер",
-            titleColor: .white,
-            backgroundColor: UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 1.0)
-        )
-
-        let redButton = buttonFactory.createButton(with: redButtonEntity)
-        let blueButton = buttonFactory.createButton(with: blueButtonEntity)
-
-        let buttonsStackView = UIStackView(arrangedSubviews: [redButton, blueButton])
-        buttonsStackView.axis = .vertical
-        buttonsStackView.alignment = .center
-        buttonsStackView.spacing = 20
-
-        view.addSubview(buttonsStackView)
-
-        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-    }
+        configurator.configure(with: self)
+//        presenter.configureView()
+        setupButtons()
+   }
 }
+    
 
 //MARK: - SwiftUI Preview
 @available(iOS 13.0, *)
@@ -79,3 +51,31 @@ struct ViewControllerWrapper: UIViewControllerRepresentable {
     }
 }
 
+//MARK: - Setup UI
+private extension ModeSelectionView {
+    func setupButtons() {
+        let buttonFactory = ButtonFactory()
+        
+        let redButton = buttonFactory.createButton(title: "Одиночная игра", titleColor: .white, backgroundColor: .red)
+        let blueButton = buttonFactory.createButton(title: "Играть по сети", titleColor: .white, backgroundColor: .blue)
+        
+        redButton.addTarget(self, action: #selector(startSingleGame), for: .touchUpInside)
+        
+        let buttonsStackView = UIStackView(arrangedSubviews: [redButton, blueButton])
+        buttonsStackView.axis = .vertical
+        buttonsStackView.alignment = .center
+        buttonsStackView.spacing = 20
+        
+        view.addSubview(buttonsStackView)
+        
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            buttonsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
+    @objc func startSingleGame() {
+        presenter.singlePlayerButtonClicked()
+    }
+}

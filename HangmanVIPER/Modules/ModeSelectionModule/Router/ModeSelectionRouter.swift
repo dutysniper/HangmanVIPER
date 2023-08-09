@@ -7,10 +7,22 @@
 
 import UIKit
 
-protocol ModeSelectionRouterInput {
-    func openGameSettingsScreen()
+protocol ModeSelectionRouterProtocol {
+    func openSingleGameScreen()
 }
 
-final class ModeSelectionRouter {
+final class ModeSelectionRouter: ModeSelectionRouterProtocol {
+    weak var view: ModeSelectionView!
+    
+    required init(view: ModeSelectionView) {
+        self.view = view
+    }
+    
+    func openSingleGameScreen() {
+        if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+            navigationController.pushViewController(SingleGameMainScreenView(), animated: true)
+        }
+    }
+    
     
 }

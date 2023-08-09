@@ -8,12 +8,13 @@
 import UIKit
 
 final class ButtonFactory {
-    public func createButton(with entity: ButtonEntityProtocol) -> UIButton {
+    
+    func createButton(title: String, titleColor: UIColor, backgroundColor: UIColor) -> UIButton {
         let button = UIButton()
         
-        button.setTitle(entity.title, for: .normal)
-        button.setTitleColor(entity.titleColor, for: .normal) 
-        button.backgroundColor = entity.backgroundColor
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(titleColor, for: .normal)
+        button.backgroundColor = backgroundColor
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
         button.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
