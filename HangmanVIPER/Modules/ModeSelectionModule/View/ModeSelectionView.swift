@@ -75,7 +75,22 @@ private extension ModeSelectionView {
         ])
     }
     
-    @objc func startSingleGame() {
-        presenter.singlePlayerButtonClicked()
+    @objc func startSingleGame(sender: UIButton) {
+        animateButtonTap(sender: sender) {
+            self.presenter.singlePlayerButtonClicked()
+        }
     }
+    
+    func animateButtonTap(sender: UIButton, completion: @escaping () -> Void) {
+           let originalTransform = sender.transform
+           
+           UIView.animate(withDuration: 0.2, animations: {
+               sender.transform = originalTransform.scaledBy(x: 0.9, y: 0.9)
+           }) { _ in
+               UIView.animate(withDuration: 0.1) {
+                   sender.transform = originalTransform
+               }
+               completion()
+           }
+       }
 }

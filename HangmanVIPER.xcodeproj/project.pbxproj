@@ -132,7 +132,7 @@
 		914ACAC12A7588A1000B53AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				914ACAC92A83B595000B53AB /* SingleGameMainScreen */,
+				914ACAC92A83B595000B53AB /* SingleGameMainModule */,
 				914ACAB32A7559B9000B53AB /* ModeSelectionModule */,
 			);
 			path = Modules;
@@ -162,12 +162,12 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		914ACAC92A83B595000B53AB /* SingleGameMainScreen */ = {
+		914ACAC92A83B595000B53AB /* SingleGameMainModule */ = {
 			isa = PBXGroup;
 			children = (
 				914ACACC2A83B5FF000B53AB /* SingleGameMainScreenView.swift */,
 			);
-			path = SingleGameMainScreen;
+			path = SingleGameMainModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
