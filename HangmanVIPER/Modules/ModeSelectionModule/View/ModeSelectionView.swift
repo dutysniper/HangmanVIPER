@@ -14,7 +14,7 @@ protocol ModeSelectionViewProtocol: AnyObject {
 }
 
 // MARK: ModeSelectionViewController!!!
-class ModeSelectionView: UIViewController, ModeSelectionViewProtocol {
+final class ModeSelectionView: UIViewController, ModeSelectionViewProtocol {
     var presenter: ModeSelectionPresenterProtocol!
     var configurator: ModeSelectionConfiguratorProtocol = ModeSelectionConfigurator()
     
