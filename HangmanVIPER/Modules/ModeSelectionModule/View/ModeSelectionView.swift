@@ -8,20 +8,21 @@
 import UIKit
 import SwiftUI
 
+// MARK: взимодействие презентера со вью через этот протокол
 protocol ModeSelectionViewProtocol: AnyObject {
-    
+    func setupButtons()
 }
 
-
+// MARK: ModeSelectionViewController!!!
 class ModeSelectionView: UIViewController, ModeSelectionViewProtocol {
     var presenter: ModeSelectionPresenterProtocol!
     var configurator: ModeSelectionConfiguratorProtocol = ModeSelectionConfigurator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .white // MARK: Тоже стоит засунуть в метод setupButtons(который по хорошему можно переименовать в setupView()
         configurator.configure(with: self)
-//        presenter.configureView()
+        presenter.configureView()
         setupButtons()
    }
 }
@@ -52,7 +53,7 @@ struct ViewControllerWrapper: UIViewControllerRepresentable {
 }
 
 //MARK: - Setup UI
-private extension ModeSelectionView {
+extension ModeSelectionView {
     func setupButtons() {
         let buttonFactory = ButtonFactory()
         
