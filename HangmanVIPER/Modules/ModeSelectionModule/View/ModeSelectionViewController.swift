@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: взимодействие презентера со вью через этот протокол
 protocol ModeSelectionViewProtocol: AnyObject {
-    func setupButtons()
+    func setupUI()
 }
 
 // MARK: ModeSelectionViewController!!!
@@ -23,7 +23,7 @@ final class ModeSelectionViewController: UIViewController, ModeSelectionViewProt
         view.backgroundColor = .white // MARK: Тоже стоит засунуть в метод setupButtons(который по хорошему можно переименовать в setupView()
         configurator.configure(with: self)
         presenter.configureView()
-        setupButtons()
+        setupUI()
    }
 }
     
@@ -53,7 +53,23 @@ struct ViewControllerWrapper: UIViewControllerRepresentable {
 }
 
 //MARK: - Setup UI
-extension ModeSelectionViewController {
+ extension ModeSelectionViewController {
+    func setupUI() {
+        setupButtons()
+        setupNavBar()
+    }
+    private func setupNavBar() {
+        let navBarUserDetailsButton = UIBarButtonItem(
+            image: UIImage(systemName: "person.circle.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(userDetailsButtonTapped))
+        navigationItem.rightBarButtonItem = navBarUserDetailsButton
+    }
+    
+     @objc func userDetailsButtonTapped () {
+         presenter.router.openDetailsUserInfo()
+     }
     func setupButtons() {
         let buttonFactory = ButtonFactory()
         

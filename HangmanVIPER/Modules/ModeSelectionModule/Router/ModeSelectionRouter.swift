@@ -9,6 +9,7 @@ import UIKit
 
 protocol ModeSelectionRouterProtocol {
     func openSingleGameScreen()
+    func openDetailsUserInfo()
 }
 
 final class ModeSelectionRouter: ModeSelectionRouterProtocol {
@@ -21,6 +22,12 @@ final class ModeSelectionRouter: ModeSelectionRouterProtocol {
     func openSingleGameScreen() {
         if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
             navigationController.pushViewController(SingleGameMainScreenViewController(), animated: true)
+        }
+    }
+    func openDetailsUserInfo() {
+        if let navigationController = UIApplication.shared.keyWindow?.rootViewController as?
+            UINavigationController {
+            navigationController.pushViewController(UserDetailsViewController(), animated: true)
         }
     }
     
