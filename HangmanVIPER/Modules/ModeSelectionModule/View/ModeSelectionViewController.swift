@@ -14,7 +14,7 @@ protocol ModeSelectionViewProtocol: AnyObject {
 }
 
 // MARK: ModeSelectionViewController!!!
-final class ModeSelectionView: UIViewController, ModeSelectionViewProtocol {
+final class ModeSelectionViewController: UIViewController, ModeSelectionViewProtocol {
     var presenter: ModeSelectionPresenterProtocol!
     var configurator: ModeSelectionConfiguratorProtocol = ModeSelectionConfigurator()
     
@@ -42,18 +42,18 @@ struct ModeSelectionViewPreview: PreviewProvider {
 
 @available(iOS 13.0, *)
 struct ViewControllerWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ViewControllerWrapper>) -> ModeSelectionView {
-        let modeSelectionView = ModeSelectionView()
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ViewControllerWrapper>) -> ModeSelectionViewController {
+        let modeSelectionView = ModeSelectionViewController()
         return modeSelectionView
     }
 
-    func updateUIViewController(_ uiViewController: ModeSelectionView, context: UIViewControllerRepresentableContext<ViewControllerWrapper>) {
+    func updateUIViewController(_ uiViewController: ModeSelectionViewController, context: UIViewControllerRepresentableContext<ViewControllerWrapper>) {
         
     }
 }
 
 //MARK: - Setup UI
-extension ModeSelectionView {
+extension ModeSelectionViewController {
     func setupButtons() {
         let buttonFactory = ButtonFactory()
         
