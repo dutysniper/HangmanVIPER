@@ -19,9 +19,9 @@
 		914ACAC82A825A26000B53AB /* ModeSelectionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAC72A825A26000B53AB /* ModeSelectionConfigurator.swift */; };
 		914ACACD2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACACC2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift */; };
 		914ACAD42A8B6FFF000B53AB /* SingleGameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */; };
-		914ACAD62A8B72E1000B53AB /* wordListWithDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAD52A8B72E1000B53AB /* wordListWithDefinition.json */; };
 		914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAD72A8B7701000B53AB /* NetworkManager.swift */; };
 		914ACADB2A8BC60C000B53AB /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */; };
+		914ACADD2A8BD31C000B53AB /* wordListWithDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 914ACADC2A8BD31C000B53AB /* wordListWithDefinition.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +40,10 @@
 		914ACACC2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGameMainScreenViewController.swift; sourceTree = "<group>"; };
 		914ACAD02A8B6CEC000B53AB /* wordList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = wordList.txt; sourceTree = "<group>"; };
 		914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGameEntity.swift; sourceTree = "<group>"; };
-		914ACAD52A8B72E1000B53AB /* wordListWithDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wordListWithDefinition.json; path = ../../../../../../Downloads/wordListWithDefinition.json; sourceTree = "<group>"; };
 		914ACAD72A8B7701000B53AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		914ACADC2A8BD31C000B53AB /* wordListWithDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wordListWithDefinition.json; path = ../../../../../../../../Downloads/wordListWithDefinition.json; sourceTree = "<group>"; };
+		914ACADE2A8BD322000B53AB /* wordListWithDefinition.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wordListWithDefinition.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				914ACABF2A755DCC000B53AB /* ModeSelectionInteractor.swift */,
+				914ACADC2A8BD31C000B53AB /* wordListWithDefinition.json */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -152,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				914ACAA72A7553E2000B53AB /* Assets.xcassets */,
+				914ACADE2A8BD322000B53AB /* wordListWithDefinition.json */,
 				914ACAD02A8B6CEC000B53AB /* wordList.txt */,
-				914ACAD52A8B72E1000B53AB /* wordListWithDefinition.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -251,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				914ACAAB2A7553E2000B53AB /* LaunchScreen.storyboard in Resources */,
-				914ACAD62A8B72E1000B53AB /* wordListWithDefinition.json in Resources */,
+				914ACADD2A8BD31C000B53AB /* wordListWithDefinition.json in Resources */,
 				914ACAA82A7553E2000B53AB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
