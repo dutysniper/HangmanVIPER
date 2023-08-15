@@ -27,7 +27,7 @@ final class ModeSelectionPresenter: ModeSelectionPresenterProtocol {
     func configureView() {
         // нужен или нет?
         // MARK: нужен
-        view.setupButtons()
+        view.setupUI()
     }
     
     func singlePlayerButtonClicked() {

@@ -21,6 +21,7 @@
 		914ACAD42A8B6FFF000B53AB /* SingleGameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */; };
 		914ACAD62A8B72E1000B53AB /* wordListWithDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAD52A8B72E1000B53AB /* wordListWithDefinition.json */; };
 		914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAD72A8B7701000B53AB /* NetworkManager.swift */; };
+		914ACADB2A8BC60C000B53AB /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGameEntity.swift; sourceTree = "<group>"; };
 		914ACAD52A8B72E1000B53AB /* wordListWithDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wordListWithDefinition.json; path = ../../../../../../Downloads/wordListWithDefinition.json; sourceTree = "<group>"; };
 		914ACAD72A8B7701000B53AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		914ACAC12A7588A1000B53AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				914ACAD92A8BC5EB000B53AB /* UserDetailsModule */,
 				914ACAC92A83B595000B53AB /* SingleGameMainModule */,
 				914ACAB32A7559B9000B53AB /* ModeSelectionModule */,
 			);
@@ -179,6 +182,14 @@
 				914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */,
 			);
 			path = SingleGameMainModule;
+			sourceTree = "<group>";
+		};
+		914ACAD92A8BC5EB000B53AB /* UserDetailsModule */ = {
+			isa = PBXGroup;
+			children = (
+				914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */,
+			);
+			path = UserDetailsModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 			files = (
 				914ACAC02A755DCC000B53AB /* ModeSelectionInteractor.swift in Sources */,
 				914ACABA2A755A8A000B53AB /* ModeSelectionRouter.swift in Sources */,
+				914ACADB2A8BC60C000B53AB /* UserDetailsViewController.swift in Sources */,
 				914ACAC82A825A26000B53AB /* ModeSelectionConfigurator.swift in Sources */,
 				914ACAC52A75890C000B53AB /* ButtonFactory.swift in Sources */,
 				914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */,
