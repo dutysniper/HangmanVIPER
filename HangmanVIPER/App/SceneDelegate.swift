@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: ModeSelectionView())
+        window?.rootViewController = UINavigationController(rootViewController: ModeSelectionViewController())
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
