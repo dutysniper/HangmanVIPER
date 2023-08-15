@@ -21,7 +21,7 @@
 		914ACAD42A8B6FFF000B53AB /* SingleGameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */; };
 		914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAD72A8B7701000B53AB /* NetworkManager.swift */; };
 		914ACADB2A8BC60C000B53AB /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */; };
-		914ACAE02A8BD425000B53AB /* wordListWithDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 914ACADF2A8BD425000B53AB /* wordListWithDefinition.json */; };
+		914ACAE22A8BD48C000B53AB /* wordListWithDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAE12A8BD48C000B53AB /* wordListWithDefinition.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGameEntity.swift; sourceTree = "<group>"; };
 		914ACAD72A8B7701000B53AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
-		914ACADF2A8BD425000B53AB /* wordListWithDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wordListWithDefinition.json; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/wordListWithDefinition.json"; sourceTree = "<group>"; };
+		914ACAE12A8BD48C000B53AB /* wordListWithDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wordListWithDefinition.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +151,8 @@
 		914ACAC22A7588C6000B53AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				914ACAE12A8BD48C000B53AB /* wordListWithDefinition.json */,
 				914ACAA72A7553E2000B53AB /* Assets.xcassets */,
-				914ACADF2A8BD425000B53AB /* wordListWithDefinition.json */,
 				914ACAD02A8B6CEC000B53AB /* wordList.txt */,
 			);
 			path = Resources;
@@ -251,7 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				914ACAAB2A7553E2000B53AB /* LaunchScreen.storyboard in Resources */,
-				914ACAE02A8BD425000B53AB /* wordListWithDefinition.json in Resources */,
+				914ACAE22A8BD48C000B53AB /* wordListWithDefinition.json in Resources */,
 				914ACAA82A7553E2000B53AB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
