@@ -7,10 +7,26 @@
 
 import UIKit
 
-class UserDetailsViewController: UIViewController {
+protocol UserDetailsViewControllerProtocol: AnyObject {
+    func setupUI()
+}
+
+final class UserDetailsViewController: UIViewController {
+    var configurator =  UserDetailsConfigurator()
+    var presenter: UserDetailsPresenterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .magenta
+        configurator.configure(with: self)
+        presenter.configureViewController()
     }
+}
+
+extension UserDetailsViewController: UserDetailsViewControllerProtocol {
+    func setupUI() {
+        view.backgroundColor = .magenta
+        print("Модуль запущен и работает нормально")
+    }
+    
+    
 }
