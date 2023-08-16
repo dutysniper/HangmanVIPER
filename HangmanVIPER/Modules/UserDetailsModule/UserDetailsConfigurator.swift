@@ -15,7 +15,7 @@ final class UserDetailsConfigurator: UserDetailsConfiguratorProtocol {
     func configure(with viewController: UserDetailsViewController) {
         let presenter = UserDetailsPresenter(viewController: viewController)
         let interactor =  UserDetailsInteractor(presenter: presenter)
-        let router = UserDetailsRouter(viewController: viewController)
+        let router = UserDetailsRouter(viewController: viewController, presenter: presenter)
         
         viewController.presenter = presenter
         presenter.interactor = interactor

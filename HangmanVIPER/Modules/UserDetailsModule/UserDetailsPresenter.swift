@@ -5,12 +5,14 @@
 //  Created by Константин Натаров on 16.08.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol UserDetailsPresenterProtocol: AnyObject {
     var router: UserDetailsRouterProtocol! { get set }
     var interactor: UserDetailsInteractorProtocol! { get set }
     func configureViewController()
+    func photoTapped()
+    func imagePicked(_ image: UIImage)
 }
 
 final class UserDetailsPresenter: UserDetailsPresenterProtocol {
@@ -26,6 +28,14 @@ final class UserDetailsPresenter: UserDetailsPresenterProtocol {
     func configureViewController() {
         viewController.setupUI()
     }
+    
+    func photoTapped() {
+        router.showImagePickerController()
+    }
+    func imagePicked(_ image: UIImage) {
+        print("метод презентера для передачи фото по вьюконтроллер")
+           viewController.setImage(image)
+       }
 }
 
 

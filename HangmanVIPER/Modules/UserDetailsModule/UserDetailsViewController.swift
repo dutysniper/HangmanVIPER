@@ -9,9 +9,10 @@ import UIKit
 
 protocol UserDetailsViewControllerProtocol: AnyObject {
     func setupUI()
+    func setImage(_ image: UIImage)
 }
 
-final class UserDetailsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class UserDetailsViewController: UIViewController {
     var configurator =  UserDetailsConfigurator()
     var presenter: UserDetailsPresenterProtocol!
     
@@ -58,18 +59,11 @@ extension UserDetailsViewController: UserDetailsViewControllerProtocol {
     }
     @objc func imageTapped() {
         // Открываем галерею для выбора изображения
+        presenter.photoTapped()
         print("Открываем Photos и выбираем картинку")
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary
-        present(imagePickerController, animated: true, completion: nil)
     }
-    
-    //MARK: -  Метод делегата UIImagePickerController для обработки выбранного изображения
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let selectedImage = info[.originalImage] as? UIImage {
-            userProfilePhoto.image = selectedImage
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
+    func setImage(_ image: UIImage) {
+        print("Финальный метод обновления фото")
+        userProfilePhoto.image = image
+       }
 }
