@@ -25,6 +25,4 @@ class SingleGamePresenter: SingleGamePresenterProtocol {
             view.setupUI(withWord: wordModel)
         }
     }
-    
-    
 }
