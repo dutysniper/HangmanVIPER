@@ -7,13 +7,21 @@
 
 import UIKit
 
+protocol SingleGameMainScrennViewController {
+    func setupUI(withWord word: WordModel)
+}
+
 final class SingleGameMainScreenViewController: UIViewController {
 
+    var presenter: SingleGamePresenterProtocol!
+    let configurator: SingleGameConfiguratorProtocol = SingleGameConfigurator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-//        testMokEntity()
-        testMockEntity()
+        
+        configurator.configure(withView: self)
+        presenter.configureView()
         
     }
 }
@@ -21,7 +29,7 @@ final class SingleGameMainScreenViewController: UIViewController {
 
 //MARK: - Setup MOK UI
 extension SingleGameMainScreenViewController {
-    private func setupUI(with word: WordModel) {
+    func setupUI(withWord word: WordModel) {
         let wordLabel = UILabel()
         let wordDefinition = UILabel()
         let labelsStackView = UIStackView(arrangedSubviews: [wordLabel, wordDefinition])
@@ -43,17 +51,5 @@ extension SingleGameMainScreenViewController {
             labelsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             labelsStackView.widthAnchor.constraint(equalToConstant: 350)
         ])
-    }
-   private func testMockEntity() {
-        let networkManager = NetworkManager.shared
-        networkManager.fetchRandomWord(fileName: "wordListWithDefinition") { result in
-            switch result {
-            case .success(let word):
-                print(word.word)
-                self.setupUI(with: word)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
     }
 }
