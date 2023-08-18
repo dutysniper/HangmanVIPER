@@ -17,6 +17,7 @@ final class UserDetailsViewController: UIViewController {
     var presenter: UserDetailsPresenterProtocol!
     
     private var userProfilePhoto = UIImageView()
+    private var userNameLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ extension UserDetailsViewController: UserDetailsViewControllerProtocol {
         view.backgroundColor = UIColor(named: "myGreen")
         print("Модуль запущен и работает нормально")
         setupUserImage()
+        setupUserNameLabel()
     }
     
     //MARK: - setup UI elements
@@ -66,4 +68,29 @@ extension UserDetailsViewController: UserDetailsViewControllerProtocol {
         print("Финальный метод обновления фото")
         userProfilePhoto.image = image
        }
+    func setupUserNameLabel() {
+        userNameLabel.text = "Steve Jobs"
+        userNameLabel.font = UIFont.systemFont(ofSize: 36)
+        userNameLabel.textColor = .black
+        
+        userNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(userNameLabel)
+        NSLayoutConstraint.activate(
+            [
+                userNameLabel.topAnchor.constraint(equalTo: userProfilePhoto.bottomAnchor, constant: 16),
+                userNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
+    }
 }
+
+//MARK: - TableView methods
+//extension UserDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        5
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        var cell = UITableViewCell()
+//        var contentCell =  cell.defaultContentConfiguration()
+//    }
+//}

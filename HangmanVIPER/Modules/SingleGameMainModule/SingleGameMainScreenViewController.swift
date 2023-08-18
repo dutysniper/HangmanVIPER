@@ -26,6 +26,7 @@ extension SingleGameMainScreenViewController {
         let wordDefinition = UILabel()
         let labelsStackView = UIStackView(arrangedSubviews: [wordLabel, wordDefinition])
         
+        
         wordLabel.text = word.word
         wordLabel.font = UIFont.systemFont(ofSize: 30)
         wordDefinition.text = word.entry.definition
