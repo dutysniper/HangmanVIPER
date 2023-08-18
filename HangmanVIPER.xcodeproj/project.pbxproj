@@ -26,6 +26,7 @@
 		914ACAE62A8CE77F000B53AB /* UserDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE52A8CE77F000B53AB /* UserDetailsInteractor.swift */; };
 		914ACAE82A8CE794000B53AB /* UserDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE72A8CE794000B53AB /* UserDetailsRouter.swift */; };
 		914ACAEA2A8CE7A5000B53AB /* UserDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */; };
+		914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		914ACAE52A8CE77F000B53AB /* UserDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsInteractor.swift; sourceTree = "<group>"; };
 		914ACAE72A8CE794000B53AB /* UserDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRouter.swift; sourceTree = "<group>"; };
 		914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsConfigurator.swift; sourceTree = "<group>"; };
+		914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				914ACAC42A75890C000B53AB /* ButtonFactory.swift */,
+				914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */,
 				914ACAD72A8B7701000B53AB /* NetworkManager.swift */,
 			);
 			path = Helpers;
@@ -285,6 +288,7 @@
 				914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */,
 				914ACACD2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift in Sources */,
 				914ACAE82A8CE794000B53AB /* UserDetailsRouter.swift in Sources */,
+				914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */,
 				914ACAD42A8B6FFF000B53AB /* SingleGameEntity.swift in Sources */,
 				914ACAA32A7553E2000B53AB /* ModeSelectionViewController.swift in Sources */,
 				914ACAE62A8CE77F000B53AB /* UserDetailsInteractor.swift in Sources */,
