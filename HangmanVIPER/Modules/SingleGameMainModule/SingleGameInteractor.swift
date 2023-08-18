@@ -7,13 +7,18 @@
 
 import Foundation
 
-protocol SingleGameInteractorProtocol {
+protocol SingleGameInteractorProtocol: AnyObject {
+    init(presenter: SingleGamePresenterProtocol)
     func getWord(completion: @escaping (WordModel) -> Void)
 }
 
 class SingleGameInteractor: SingleGameInteractorProtocol {
-    
     private let networkManager = NetworkManager.shared
+    let presenter: SingleGamePresenterProtocol
+    
+    required init(presenter: SingleGamePresenterProtocol) {
+        self.presenter = presenter
+    }
     
     func getWord(completion: @escaping (WordModel) -> Void) {
         networkManager.fetchRandomWord(fileName: "wordListWithDefinition") { result in
