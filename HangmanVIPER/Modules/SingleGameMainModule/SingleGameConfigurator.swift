@@ -18,5 +18,6 @@ final class SingleGameConfigurator: SingleGameConfiguratorProtocol {
         let router = SingleGameRouter(view: view)
         view.presenter = presenter
         presenter.interactor = interactor
+        presenter.router = router
     }
 }
