@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0751CBAC2A8E7239004FA43B /* SingleGameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CBAB2A8E7239004FA43B /* SingleGameConfigurator.swift */; };
+		0751CBAE2A8E72FC004FA43B /* SingleGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CBAD2A8E72FC004FA43B /* SingleGamePresenter.swift */; };
+		0751CBB02A8E7F75004FA43B /* SingleGameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CBAF2A8E7F75004FA43B /* SingleGameInteractor.swift */; };
+		0751CBB22A903233004FA43B /* SingleGameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751CBB12A903233004FA43B /* SingleGameRouter.swift */; };
 		914ACA9F2A7553E2000B53AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACA9E2A7553E2000B53AB /* AppDelegate.swift */; };
 		914ACAA12A7553E2000B53AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAA02A7553E2000B53AB /* SceneDelegate.swift */; };
 		914ACAA32A7553E2000B53AB /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAA22A7553E2000B53AB /* ModeSelectionViewController.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0751CBAB2A8E7239004FA43B /* SingleGameConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGameConfigurator.swift; sourceTree = "<group>"; };
+		0751CBAD2A8E72FC004FA43B /* SingleGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGamePresenter.swift; sourceTree = "<group>"; };
+		0751CBAF2A8E7F75004FA43B /* SingleGameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGameInteractor.swift; sourceTree = "<group>"; };
+		0751CBB12A903233004FA43B /* SingleGameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGameRouter.swift; sourceTree = "<group>"; };
 		914ACA9B2A7553E2000B53AB /* HangmanVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HangmanVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		914ACA9E2A7553E2000B53AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		914ACAA02A7553E2000B53AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +199,10 @@
 			children = (
 				914ACACC2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift */,
 				914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */,
+				0751CBAB2A8E7239004FA43B /* SingleGameConfigurator.swift */,
+				0751CBAD2A8E72FC004FA43B /* SingleGamePresenter.swift */,
+				0751CBAF2A8E7F75004FA43B /* SingleGameInteractor.swift */,
+				0751CBB12A903233004FA43B /* SingleGameRouter.swift */,
 			);
 			path = SingleGameMainModule;
 			sourceTree = "<group>";
@@ -279,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				914ACAEA2A8CE7A5000B53AB /* UserDetailsConfigurator.swift in Sources */,
+				0751CBB02A8E7F75004FA43B /* SingleGameInteractor.swift in Sources */,
 				914ACAC02A755DCC000B53AB /* ModeSelectionInteractor.swift in Sources */,
 				914ACABA2A755A8A000B53AB /* ModeSelectionRouter.swift in Sources */,
 				914ACADB2A8BC60C000B53AB /* UserDetailsViewController.swift in Sources */,
@@ -286,14 +299,17 @@
 				914ACAC52A75890C000B53AB /* ButtonFactory.swift in Sources */,
 				914ACAE42A8CE76F000B53AB /* UserDetailsPresenter.swift in Sources */,
 				914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */,
+				0751CBAE2A8E72FC004FA43B /* SingleGamePresenter.swift in Sources */,
 				914ACACD2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift in Sources */,
 				914ACAE82A8CE794000B53AB /* UserDetailsRouter.swift in Sources */,
 				914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */,
 				914ACAD42A8B6FFF000B53AB /* SingleGameEntity.swift in Sources */,
+				0751CBAC2A8E7239004FA43B /* SingleGameConfigurator.swift in Sources */,
 				914ACAA32A7553E2000B53AB /* ModeSelectionViewController.swift in Sources */,
 				914ACAE62A8CE77F000B53AB /* UserDetailsInteractor.swift in Sources */,
 				914ACA9F2A7553E2000B53AB /* AppDelegate.swift in Sources */,
 				914ACAA12A7553E2000B53AB /* SceneDelegate.swift in Sources */,
+				0751CBB22A903233004FA43B /* SingleGameRouter.swift in Sources */,
 				914ACABE2A755D09000B53AB /* ModeSelectionPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

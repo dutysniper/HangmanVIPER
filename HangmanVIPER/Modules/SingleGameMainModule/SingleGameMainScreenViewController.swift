@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
+    func setupUI(withWord word: WordModel)
+}
+
 final class SingleGameMainScreenViewController: UIViewController {
     let letterButtons = LetterButtonsFactory().createLetterButtons()
     let hangmanImage = UIImageView()
+
+    var presenter: SingleGamePresenterProtocol!
+    let configurator: SingleGameConfiguratorProtocol = SingleGameConfigurator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +24,16 @@ final class SingleGameMainScreenViewController: UIViewController {
         testMockEntity()
         setupLettersButtons()
         setupHangmanImage()
+        configurator.configure(withView: self)
+        presenter.configureView()
         
     }
 }
 
 
 //MARK: - Setup MOK UI
-extension SingleGameMainScreenViewController {
-    private func setupUI(with word: WordModel) {
+extension SingleGameMainScreenViewController: SingleGameMainScreenViewControllerProtocol {
+    func setupUI(withWord word: WordModel) {
         let wordLabel = UILabel()
         let wordDefinition = UILabel()
         let labelsStackView = UIStackView(arrangedSubviews: [wordLabel, wordDefinition])
