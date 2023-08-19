@@ -14,7 +14,7 @@ protocol SingleGameInteractorProtocol: AnyObject {
 
 final class SingleGameInteractor: SingleGameInteractorProtocol {
     private let networkManager = NetworkManager.shared
-    let presenter: SingleGamePresenterProtocol
+    unowned let presenter: SingleGamePresenterProtocol
     
     required init(presenter: SingleGamePresenterProtocol) {
         self.presenter = presenter
