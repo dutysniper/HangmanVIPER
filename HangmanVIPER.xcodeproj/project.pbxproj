@@ -26,6 +26,11 @@
 		914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAD72A8B7701000B53AB /* NetworkManager.swift */; };
 		914ACADB2A8BC60C000B53AB /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */; };
 		914ACAE22A8BD48C000B53AB /* wordListWithDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 914ACAE12A8BD48C000B53AB /* wordListWithDefinition.json */; };
+		914ACAE42A8CE76F000B53AB /* UserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE32A8CE76F000B53AB /* UserDetailsPresenter.swift */; };
+		914ACAE62A8CE77F000B53AB /* UserDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE52A8CE77F000B53AB /* UserDetailsInteractor.swift */; };
+		914ACAE82A8CE794000B53AB /* UserDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE72A8CE794000B53AB /* UserDetailsRouter.swift */; };
+		914ACAEA2A8CE7A5000B53AB /* UserDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */; };
+		914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,11 @@
 		914ACAD72A8B7701000B53AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		914ACAE12A8BD48C000B53AB /* wordListWithDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wordListWithDefinition.json; sourceTree = "<group>"; };
+		914ACAE32A8CE76F000B53AB /* UserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenter.swift; sourceTree = "<group>"; };
+		914ACAE52A8CE77F000B53AB /* UserDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsInteractor.swift; sourceTree = "<group>"; };
+		914ACAE72A8CE794000B53AB /* UserDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRouter.swift; sourceTree = "<group>"; };
+		914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsConfigurator.swift; sourceTree = "<group>"; };
+		914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				914ACAC42A75890C000B53AB /* ButtonFactory.swift */,
+				914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */,
 				914ACAD72A8B7701000B53AB /* NetworkManager.swift */,
 			);
 			path = Helpers;
@@ -199,6 +210,10 @@
 		914ACAD92A8BC5EB000B53AB /* UserDetailsModule */ = {
 			isa = PBXGroup;
 			children = (
+				914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */,
+				914ACAE72A8CE794000B53AB /* UserDetailsRouter.swift */,
+				914ACAE52A8CE77F000B53AB /* UserDetailsInteractor.swift */,
+				914ACAE32A8CE76F000B53AB /* UserDetailsPresenter.swift */,
 				914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */,
 			);
 			path = UserDetailsModule;
@@ -275,18 +290,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				914ACAEA2A8CE7A5000B53AB /* UserDetailsConfigurator.swift in Sources */,
 				0751CBB02A8E7F75004FA43B /* SingleGameInteractor.swift in Sources */,
 				914ACAC02A755DCC000B53AB /* ModeSelectionInteractor.swift in Sources */,
 				914ACABA2A755A8A000B53AB /* ModeSelectionRouter.swift in Sources */,
 				914ACADB2A8BC60C000B53AB /* UserDetailsViewController.swift in Sources */,
 				914ACAC82A825A26000B53AB /* ModeSelectionConfigurator.swift in Sources */,
 				914ACAC52A75890C000B53AB /* ButtonFactory.swift in Sources */,
+				914ACAE42A8CE76F000B53AB /* UserDetailsPresenter.swift in Sources */,
 				914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */,
 				0751CBAE2A8E72FC004FA43B /* SingleGamePresenter.swift in Sources */,
 				914ACACD2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift in Sources */,
+				914ACAE82A8CE794000B53AB /* UserDetailsRouter.swift in Sources */,
+				914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */,
 				914ACAD42A8B6FFF000B53AB /* SingleGameEntity.swift in Sources */,
 				0751CBAC2A8E7239004FA43B /* SingleGameConfigurator.swift in Sources */,
 				914ACAA32A7553E2000B53AB /* ModeSelectionViewController.swift in Sources */,
+				914ACAE62A8CE77F000B53AB /* UserDetailsInteractor.swift in Sources */,
 				914ACA9F2A7553E2000B53AB /* AppDelegate.swift in Sources */,
 				914ACAA12A7553E2000B53AB /* SceneDelegate.swift in Sources */,
 				0751CBB22A903233004FA43B /* SingleGameRouter.swift in Sources */,
