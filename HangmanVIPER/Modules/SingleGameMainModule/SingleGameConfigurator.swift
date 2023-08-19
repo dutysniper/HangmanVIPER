@@ -15,7 +15,7 @@ final class SingleGameConfigurator: SingleGameConfiguratorProtocol {
     func configure(withView view: SingleGameMainScreenViewController) {
         let presenter = SingleGamePresenter(view: view)
         let interactor = SingleGameInteractor(presenter: presenter)
-        let router = SingleGameRouter(view: view)
+        let router = SingleGameRouter(view: view, presenter: presenter)
         view.presenter = presenter
         presenter.interactor = interactor
         presenter.router = router
