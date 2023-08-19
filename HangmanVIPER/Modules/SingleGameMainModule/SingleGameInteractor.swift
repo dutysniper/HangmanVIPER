@@ -12,7 +12,7 @@ protocol SingleGameInteractorProtocol: AnyObject {
     func getWord(completion: @escaping (WordModel) -> Void)
 }
 
-class SingleGameInteractor: SingleGameInteractorProtocol {
+final class SingleGameInteractor: SingleGameInteractorProtocol {
     private let networkManager = NetworkManager.shared
     let presenter: SingleGamePresenterProtocol
     

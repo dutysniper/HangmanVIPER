@@ -13,7 +13,7 @@ protocol SingleGamePresenterProtocol: AnyObject {
     func configureView()
 }
 
-class SingleGamePresenter: SingleGamePresenterProtocol {
+final class SingleGamePresenter: SingleGamePresenterProtocol {
     let view: SingleGameMainScreenViewController
     
     var router: SingleGameRouterProtocol!

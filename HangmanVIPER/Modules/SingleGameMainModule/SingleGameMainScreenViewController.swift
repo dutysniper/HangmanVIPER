@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SingleGameMainScrennViewControllerProtocol {
+protocol SingleGameMainScreenViewControllerProtocol {
     func setupUI(withWord word: WordModel)
 }
 
@@ -28,7 +28,7 @@ final class SingleGameMainScreenViewController: UIViewController {
 
 
 //MARK: - Setup MOK UI
-extension SingleGameMainScreenViewController: SingleGameMainScrennViewControllerProtocol {
+extension SingleGameMainScreenViewController: SingleGameMainScreenViewControllerProtocol {
     func setupUI(withWord word: WordModel) {
         let wordLabel = UILabel()
         let wordDefinition = UILabel()
