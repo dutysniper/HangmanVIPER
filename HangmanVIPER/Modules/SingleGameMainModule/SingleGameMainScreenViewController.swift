@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SingleGameMainScreenViewControllerProtocol {
+protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
     func setupUI(withWord word: WordModel)
 }
 

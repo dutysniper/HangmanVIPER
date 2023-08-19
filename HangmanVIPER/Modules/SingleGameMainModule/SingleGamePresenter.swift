@@ -9,17 +9,17 @@ import Foundation
 
 protocol SingleGamePresenterProtocol: AnyObject {
     var router: SingleGameRouterProtocol! { get set }
-    init(view: SingleGameMainScreenViewController)
+    init(view: SingleGameMainScreenViewControllerProtocol)
     func configureView()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
-    let view: SingleGameMainScreenViewController
+    private unowned let view: SingleGameMainScreenViewControllerProtocol
     
     var router: SingleGameRouterProtocol!
     var interactor: SingleGameInteractorProtocol!
     
-    required init(view: SingleGameMainScreenViewController) {
+    required init(view: SingleGameMainScreenViewControllerProtocol) {
         self.view = view
     }
     
