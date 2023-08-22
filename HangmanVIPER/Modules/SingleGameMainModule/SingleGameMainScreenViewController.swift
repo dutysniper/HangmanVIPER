@@ -8,22 +8,24 @@
 import UIKit
 
 protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
-    func setupUI(withWord word: WordModel)
+    func setupUI(with word: WordModel)
 }
 
 final class SingleGameMainScreenViewController: UIViewController {
-    let letterButtons = LetterButtonsFactory().createLetterButtons()
-    let hangmanImage = UIImageView()
+    private let letterButtons = LetterButtonsFactory().createLetterButtons()
+    private let hangmanImage = UIImageView()
+    private let lifeImage = UIImageView()
 
+    //MARK: - stackView's
+    private var letterButtonsStackView: UIStackView!
+    private var lifeImagesStackView: UIStackView!
+    
     var presenter: SingleGamePresenterProtocol!
     let configurator: SingleGameConfiguratorProtocol = SingleGameConfigurator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-        testMockEntity()
-        setupLettersButtons()
-        setupHangmanImage()
         configurator.configure(withView: self)
         presenter.configureView()
         
@@ -33,7 +35,14 @@ final class SingleGameMainScreenViewController: UIViewController {
 
 //MARK: - Setup MOK UI
 extension SingleGameMainScreenViewController: SingleGameMainScreenViewControllerProtocol {
-    func setupUI(withWord word: WordModel) {
+    func setupUI(with word: WordModel) {
+        setupWord(with: word)
+        setupLettersButtons()
+        setupHangmanImage()
+        setupLifes()
+    }
+    
+    func setupWord(with word: WordModel) {
         let wordLabel = UILabel()
         let wordDefinition = UILabel()
         let labelsStackView = UIStackView(arrangedSubviews: [wordLabel, wordDefinition])
@@ -57,18 +66,7 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
             labelsStackView.widthAnchor.constraint(equalToConstant: 400)
         ])
     }
-   private func testMockEntity() {
-        let networkManager = NetworkManager.shared
-        networkManager.fetchRandomWord(fileName: "wordListWithDefinition") { result in
-            switch result {
-            case .success(let word):
-                print(word.word)
-                self.setupUI(with: word)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
+    
     private func setupLettersButtons() {
         let letterButtons = LetterButtonsFactory().createLetterButtons()
         
@@ -107,6 +105,7 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
                 verticalStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
             ]
         )
+        letterButtonsStackView = verticalStackView
     }
     private func setupHangmanImage() {
         hangmanImage.image = UIImage(named: "hangman1")
@@ -122,4 +121,33 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         ]
         )
     }
+    
+    private func setupLifes() {
+        var lifes: [UIImageView] = []
+        
+        for _ in 1...7 {
+            let lifeImage = UIImageView()
+            lifeImage.image = UIImage(systemName: "heart.fill")
+            lifeImage.tintColor = .systemRed
+            lifeImage.frame.size = CGSize(width: 10, height: 10)
+            lifes.append(lifeImage)
+        }
+        
+        let lifesStackView = UIStackView(arrangedSubviews: lifes)
+        lifesStackView.axis = .horizontal
+        lifesStackView.spacing = 5
+        lifesStackView.alignment = .leading
+        
+        lifesStackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(lifesStackView)
+        NSLayoutConstraint.activate(
+        [
+         
+            lifesStackView.leadingAnchor.constraint(equalTo: letterButtonsStackView.leadingAnchor, constant: 70),
+            lifesStackView.bottomAnchor.constraint(equalTo: letterButtonsStackView.topAnchor, constant: 8)
+        ]
+        )
+        lifeImagesStackView = lifesStackView
+    }
+
 }

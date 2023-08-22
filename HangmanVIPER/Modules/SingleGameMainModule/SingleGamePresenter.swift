@@ -25,7 +25,7 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
     
     func configureView() {
         interactor.getWord { [unowned self] wordModel in
-            view.setupUI(withWord: wordModel)
+            view.setupUI(with: wordModel)
         }
     }
 }
