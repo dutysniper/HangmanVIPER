@@ -11,6 +11,9 @@ protocol SingleGamePresenterProtocol: AnyObject {
     var router: SingleGameRouterProtocol! { get set }
     init(view: SingleGameMainScreenViewControllerProtocol)
     func configureView()
+    func letterPressed(_ letter: String)
+    func openTheLetter(at index: [Int])
+    func takeTheHeart()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -24,8 +27,20 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
     }
     
     func configureView() {
-        interactor.getWord { [unowned self] wordModel in
+        interactor.getNewWord { [unowned self] wordModel in
             view.setupUI(with: wordModel)
         }
+    }
+    
+    func letterPressed(_ letter: String) {
+        interactor.isValidLetter(letter)
+    }
+    
+    func openTheLetter(at index: [Int]) {
+        
+    }
+    
+    func takeTheHeart() {
+        
     }
 }

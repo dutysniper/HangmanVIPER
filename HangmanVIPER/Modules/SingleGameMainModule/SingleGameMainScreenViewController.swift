@@ -70,6 +70,11 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
     private func setupLettersButtons() {
         let letterButtons = LetterButtonsFactory().createLetterButtons()
         
+        letterButtons.forEach {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(letterPressed(_ :)))
+            $0.addGestureRecognizer(tapGesture)
+        }
+        
         let verticalStackView = UIStackView()
         verticalStackView.axis = .vertical
         verticalStackView.alignment = .center
@@ -150,4 +155,14 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         lifeImagesStackView = lifesStackView
     }
 
+}
+
+// MARK: - business
+extension SingleGameMainScreenViewController {
+    @objc
+    func letterPressed(_ sender: UITapGestureRecognizer) {
+        guard let button = sender.view as? UIButton else { return }
+        guard let letter = button.currentTitle else { return }
+        print("pressed \(letter)")
+    }
 }
