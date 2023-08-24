@@ -14,7 +14,7 @@ protocol SingleGamePresenterProtocol: AnyObject {
     func letterPressed(_ letter: String)
     func openTheLetter(_ word: String)
     func takeTheHeart()
-    func closeTheView()
+    func endTheGame()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -45,7 +45,8 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
         view.takeTheHeart()
     }
     
-    func closeTheView() {
+    func endTheGame() {
         router.closeTheView()
+        // Тут алерт
     }
 }

@@ -177,7 +177,7 @@ extension SingleGameMainScreenViewController {
         guard let lifeImagesStackView else { return }
         lifeImagesStackView.removeArrangedSubview(lifeImagesStackView.forLastBaselineLayout)
         if lifeImagesStackView.arrangedSubviews.count == 0 {
-            presenter.closeTheView()
+            presenter.endTheGame()
         }
     }
 }
