@@ -18,6 +18,7 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
     private let networkManager = NetworkManager.shared
     
     private var word: WordModel = WordModel(word: "", entry: Word(definition: ""))
+    private var openedLettersIndexes: [Int] = []
     
     unowned let presenter: SingleGamePresenterProtocol
     
@@ -43,13 +44,24 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
     }
     
     func isValidLetter(_ letter: String) {
-        var indexes: [Int] = []
-        for (index, letterInWord) in word.word.enumerated() {
-            if letter == String(letterInWord) {
-                indexes.append(index)
+        if word.word.contains(letter) {
+            var _word = ""
+            for (i, l) in word.word.enumerated() {
+                if letter == String(l) {
+                    openedLettersIndexes.append(i)
+                }
             }
+            for (i, l) in word.word.enumerated() {
+                if openedLettersIndexes.contains(i) {
+                    _word += String(l)
+                } else {
+                    _word += "_"
+                }
+            }
+            presenter.openTheLetter(_word.map { String($0) }.joined(separator: " "))
+        } else {
+            presenter.takeTheHeart()
         }
-        indexes.isEmpty ? presenter.takeTheHeart() : presenter.openTheLetter(at: indexes)
     }
     
 }

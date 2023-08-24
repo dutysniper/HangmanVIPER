@@ -9,12 +9,16 @@ import UIKit
 
 protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
     func setupUI(with word: WordModel)
+    func openTheLetter(_ word: String)
+    func takeTheHeart()
 }
 
 final class SingleGameMainScreenViewController: UIViewController {
     private let letterButtons = LetterButtonsFactory().createLetterButtons()
     private let hangmanImage = UIImageView()
     private let lifeImage = UIImageView()
+    private let wordLabel = UILabel()
+    private let wordDefinition = UILabel()
 
     //MARK: - stackView's
     private var letterButtonsStackView: UIStackView!
@@ -43,11 +47,9 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
     }
     
     func setupWord(with word: WordModel) {
-        let wordLabel = UILabel()
-        let wordDefinition = UILabel()
         let labelsStackView = UIStackView(arrangedSubviews: [wordLabel, wordDefinition])
         
-        wordLabel.text = word.word
+        wordLabel.text = word.word.map { _ in "_" }.joined(separator: " ")
         wordLabel.font = UIFont.systemFont(ofSize: 30)
         wordDefinition.text = word.entry.definition
         wordDefinition.numberOfLines = 0
@@ -164,5 +166,18 @@ extension SingleGameMainScreenViewController {
         guard let button = sender.view as? UIButton else { return }
         guard let letter = button.currentTitle else { return }
         print("pressed \(letter)")
+        presenter.letterPressed(letter)
+    }
+    
+    func openTheLetter(_ word: String) {
+        wordLabel.text = word
+    }
+    
+    func takeTheHeart() {
+        guard let lifeImagesStackView else { return }
+        lifeImagesStackView.removeArrangedSubview(lifeImagesStackView.forLastBaselineLayout)
+        if lifeImagesStackView.arrangedSubviews.count == 0 {
+            presenter.closeTheView()
+        }
     }
 }

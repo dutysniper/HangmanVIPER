@@ -12,8 +12,9 @@ protocol SingleGamePresenterProtocol: AnyObject {
     init(view: SingleGameMainScreenViewControllerProtocol)
     func configureView()
     func letterPressed(_ letter: String)
-    func openTheLetter(at index: [Int])
+    func openTheLetter(_ word: String)
     func takeTheHeart()
+    func closeTheView()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -36,11 +37,15 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
         interactor.isValidLetter(letter)
     }
     
-    func openTheLetter(at index: [Int]) {
-        
+    func openTheLetter(_ word: String) {
+        view.openTheLetter(word)
     }
     
     func takeTheHeart() {
-        
+        view.takeTheHeart()
+    }
+    
+    func closeTheView() {
+        router.closeTheView()
     }
 }
