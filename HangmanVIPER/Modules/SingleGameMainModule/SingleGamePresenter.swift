@@ -47,6 +47,6 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
     
     func endTheGame() {
         router.closeTheView()
-        // Тут алерт
+        // Тут алерт или что-то другое
     }
 }
