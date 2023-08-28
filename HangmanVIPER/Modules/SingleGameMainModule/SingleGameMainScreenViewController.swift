@@ -167,6 +167,13 @@ extension SingleGameMainScreenViewController {
         guard let letter = button.currentTitle else { return }
         print("pressed \(letter)")
         presenter.letterPressed(letter)
+        if lifeImagesStackView.arrangedSubviews.count == 0 {
+            presenter.endTheGame(isWin: false)
+        } else if let word = wordLabel.text {
+            if !word.contains("_") {
+                presenter.endTheGame(isWin: true)
+            }
+        }
     }
     
     func openTheLetter(_ word: String) {
@@ -176,8 +183,5 @@ extension SingleGameMainScreenViewController {
     func takeTheHeart() {
         guard let lifeImagesStackView else { return }
         lifeImagesStackView.removeArrangedSubview(lifeImagesStackView.forLastBaselineLayout)
-        if lifeImagesStackView.arrangedSubviews.count == 0 {
-            presenter.endTheGame()
-        }
     }
 }

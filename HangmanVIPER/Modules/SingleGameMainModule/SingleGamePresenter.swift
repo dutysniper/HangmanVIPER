@@ -14,7 +14,7 @@ protocol SingleGamePresenterProtocol: AnyObject {
     func letterPressed(_ letter: String)
     func openTheLetter(_ word: String)
     func takeTheHeart()
-    func endTheGame()
+    func endTheGame(isWin: Bool)
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -45,7 +45,8 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
         view.takeTheHeart()
     }
     
-    func endTheGame() {
+    func endTheGame(isWin: Bool) {
+        isWin ? print("Победа") : print("Поражение")
         router.closeTheView()
         // Тут алерт или что-то другое
     }
