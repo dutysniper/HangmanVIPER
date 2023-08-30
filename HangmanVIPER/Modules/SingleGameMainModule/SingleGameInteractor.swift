@@ -44,6 +44,7 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
     }
     
     func isValidLetter(_ letter: String) {
+        //TODO: сделать так, что б буква изчезала, после того, как ее нажали, и строка сдвигалась
         if word.word.contains(letter) {
             var _word = ""
             for (i, l) in word.word.enumerated() {
