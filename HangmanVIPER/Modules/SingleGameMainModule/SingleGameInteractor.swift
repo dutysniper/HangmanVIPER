@@ -19,10 +19,12 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
     private let networkManager = NetworkManager.shared
     private var word: WordModel = WordModel(word: "", entry: Word(definition: ""))
     
+    var isWin = false
     // Если все буквы открыты, то игра выиграна
     private var openedLettersIndexes: Set<Int> = [] {
         didSet {
             if openedLettersIndexes.count == word.word.count {
+                isWin.toggle()
                 presenter.endTheGame(isWin: true)
             }
         }

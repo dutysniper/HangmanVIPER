@@ -15,6 +15,7 @@ protocol SingleGamePresenterProtocol: AnyObject {
     func openTheLetter(_ word: String)
     func takeTheHeart()
     func endTheGame(isWin: Bool)
+    func goToMainMenu()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -50,8 +51,16 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
     
     // Срабатывает при угадывании слова или когда кончились сердечки
     func endTheGame(isWin: Bool) {
-        isWin ? print("Победа") : print("Поражение")
-        router.closeTheView()
+        isWin
+        ? print("Победа")
+        
+        : print("Поражение")
+        view.showGameOverViewWith(result: isWin)
         // Тут алерт или что-то другое
     }
+    
+    func goToMainMenu() {
+        router.closeTheView()
+    }
+    
 }

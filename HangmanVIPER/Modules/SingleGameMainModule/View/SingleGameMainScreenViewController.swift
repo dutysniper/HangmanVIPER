@@ -11,6 +11,7 @@ protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
     func setupUI(with word: WordModel)
     func openTheLetter(_ word: String)
     func takeTheHeart()
+    func showGameOverViewWith(result: Bool)
 }
 
 final class SingleGameMainScreenViewController: UIViewController {
@@ -18,6 +19,10 @@ final class SingleGameMainScreenViewController: UIViewController {
     private let lifeImage = UIImageView()
     private let wordLabel = UILabel()
     private let wordDefinition = UILabel()
+ 
+
+        
+
     
     //MARK: - stackView's
     private var letterButtonsStackView: UIStackView!
@@ -38,6 +43,7 @@ final class SingleGameMainScreenViewController: UIViewController {
 
 //MARK: - Setup MOK UI
 extension SingleGameMainScreenViewController: SingleGameMainScreenViewControllerProtocol {
+    
     func setupUI(with word: WordModel) {
         setupWord(with: word)
         setupLettersButtons()
@@ -45,6 +51,13 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         setupLifes()
     }
     
+    func startNewGame() {
+        presenter.configureView()
+    }
+    
+    func exitToMainMenu() {
+        presenter.goToMainMenu()
+    }
     func setupWord(with word: WordModel) {
         let labelsStackView = UIStackView(arrangedSubviews: [wordLabel, wordDefinition])
         
@@ -157,7 +170,30 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         lifeImagesStackView = lifesStackView
     }
     
-}
+    func showGameOverViewWith(result: Bool) {
+        let gameOverView =  GameOverView(frame: CGRect(x: 400, y: 400, width: 400, height: 400), gameResultLabelText: result ? "Победа!" : "Поражение!", exitAction: exitToMainMenu, newGameAction: startNewGame)
+            
+        view.subviews.forEach { subview in
+            subview.alpha = 0.5
+        }
+        
+        gameOverView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(gameOverView)
+        NSLayoutConstraint.activate(
+            [
+                gameOverView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                gameOverView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                        gameOverView.widthAnchor.constraint(equalToConstant: 250),
+                        gameOverView.heightAnchor.constraint(equalToConstant: 250)
+        ]
+        )
+        UIView.animate(withDuration: 0.5) {
+            gameOverView.frame.origin.y = self.view.frame.height - gameOverView.frame.height
+        }
+    }
+    }
+    
+   
 
 // MARK: - business
 extension SingleGameMainScreenViewController {
@@ -167,10 +203,26 @@ extension SingleGameMainScreenViewController {
     func letterPressed(_ sender: UITapGestureRecognizer) {
         guard let button = sender.view as? UIButton else { return }
         guard let letter = button.currentTitle else { return }
-        
         presenter.letterPressed(letter)
+        button.isEnabled = false
+        button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.07267296393)
+        button.layer.cornerRadius = min(button.bounds.width, button.bounds.height) / 2
+        button.layer.masksToBounds = true
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }) { _ in
+            UIView.animate(withDuration: 0.5) {
+                button.transform = CGAffineTransform.identity
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            UIButton.animate(withDuration: 0.5, animations: {
+                button.alpha = 0.0
+            })
+        }
     }
-    
     // Вызывается из презентера, открывает букву(-ы)
     func openTheLetter(_ word: String) {
         wordLabel.text = word
