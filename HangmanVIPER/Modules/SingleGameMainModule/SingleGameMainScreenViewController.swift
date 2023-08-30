@@ -72,6 +72,7 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
     private func setupLettersButtons() {
         let letterButtons = LetterButtonsFactory().createLetterButtons()
         
+        // Добавил в кнопки нажатия
         letterButtons.forEach {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(letterPressed(_ :)))
             $0.addGestureRecognizer(tapGesture)
@@ -161,12 +162,17 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
 
 // MARK: - business
 extension SingleGameMainScreenViewController {
+    
+    // Срабатывает по нажатию кнопки
     @objc
     func letterPressed(_ sender: UITapGestureRecognizer) {
         guard let button = sender.view as? UIButton else { return }
         guard let letter = button.currentTitle else { return }
-        print("pressed \(letter)")
+        
         presenter.letterPressed(letter)
+        
+        // Проверка количества сердечек и количества открытых букв, вызов метода
+        // который заканчивает игру
         if lifeImagesStackView.arrangedSubviews.count == 0 {
             presenter.endTheGame(isWin: false)
         } else if let word = wordLabel.text {
@@ -176,10 +182,12 @@ extension SingleGameMainScreenViewController {
         }
     }
     
+    // Вызывается из презентера, открывает букву(-ы)
     func openTheLetter(_ word: String) {
         wordLabel.text = word
     }
     
+    // Забирает сердечко
     func takeTheHeart() {
         guard let lifeImagesStackView else { return }
         lifeImagesStackView.removeArrangedSubview(lifeImagesStackView.forLastBaselineLayout)

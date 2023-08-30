@@ -33,18 +33,22 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
         }
     }
     
+    // Нажалась буква
     func letterPressed(_ letter: String) {
         interactor.isValidLetter(letter)
     }
     
+    // Открывает букву во вью
     func openTheLetter(_ word: String) {
         view.openTheLetter(word)
     }
     
+    // Забирает сердечко
     func takeTheHeart() {
         view.takeTheHeart()
     }
     
+    // Срабатывает при угадывании слова или когда кончились сердечки
     func endTheGame(isWin: Bool) {
         isWin ? print("Победа") : print("Поражение")
         router.closeTheView()

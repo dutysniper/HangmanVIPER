@@ -8,17 +8,15 @@
 import UIKit
 
 protocol SingleGameRouterProtocol: AnyObject {
-    init(view: SingleGameMainScreenViewControllerProtocol, presenter: SingleGamePresenterProtocol)
+    init(view: SingleGameMainScreenViewControllerProtocol)
     func closeTheView()
 }
 
 final class SingleGameRouter: SingleGameRouterProtocol {
     unowned var view: SingleGameMainScreenViewControllerProtocol
-    unowned var presenter: SingleGamePresenterProtocol
     
-    init(view: SingleGameMainScreenViewControllerProtocol, presenter: SingleGamePresenterProtocol) {
+    init(view: SingleGameMainScreenViewControllerProtocol) {
         self.view = view
-        self.presenter = presenter
     }
     
     func closeTheView() {

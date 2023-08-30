@@ -10,17 +10,16 @@ import Foundation
 protocol SingleGameInteractorProtocol: AnyObject {
     init(presenter: SingleGamePresenterProtocol)
     func getNewWord(completion: @escaping (WordModel) -> Void)
-    func getCurrentWord() -> WordModel
     func isValidLetter(_ letter: String)
 }
 
 final class SingleGameInteractor: SingleGameInteractorProtocol {
+    unowned let presenter: SingleGamePresenterProtocol
+    
     private let networkManager = NetworkManager.shared
     
     private var word: WordModel = WordModel(word: "", entry: Word(definition: ""))
     private var openedLettersIndexes: [Int] = []
-    
-    unowned let presenter: SingleGamePresenterProtocol
     
     required init(presenter: SingleGamePresenterProtocol) {
         self.presenter = presenter
@@ -39,10 +38,11 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
         }
     }
     
-    func getCurrentWord() -> WordModel {
-        return word
-    }
-    
+    // Передает букву в метод, если она есть, то проверяет какой индекс у этой
+    // буквы в слове, далее индекс добавляется в массив. Потом составляется слово
+    // и открытыми остаются буквы из массива. Например, массив
+    // содержит [1, 3, 5], в презентер будет возвращаться "_о_о_а".
+    // Если буквы нет, то вызывается метод, который забирает сердечко.
     func isValidLetter(_ letter: String) {
         //TODO: сделать так, что б буква изчезала, после того, как ее нажали, и строка сдвигалась
         if word.word.contains(letter) {
