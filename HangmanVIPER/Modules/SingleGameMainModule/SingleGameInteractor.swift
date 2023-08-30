@@ -17,9 +17,24 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
     unowned let presenter: SingleGamePresenterProtocol
     
     private let networkManager = NetworkManager.shared
-    
     private var word: WordModel = WordModel(word: "", entry: Word(definition: ""))
-    private var openedLettersIndexes: [Int] = []
+    
+    // Если все буквы открыты, то игра выиграна
+    private var openedLettersIndexes: Set<Int> = [] {
+        didSet {
+            if openedLettersIndexes.count == word.word.count {
+                presenter.endTheGame(isWin: true)
+            }
+        }
+    }
+    // Если все жизни кончились, то игра проиграна
+    private var lifes = 7 {
+        didSet {
+            if lifes == 0 {
+                presenter.endTheGame(isWin: false)
+            }
+        }
+    }
     
     required init(presenter: SingleGamePresenterProtocol) {
         self.presenter = presenter
@@ -49,7 +64,7 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
             var _word = ""
             for (i, l) in word.word.enumerated() {
                 if letter == String(l) {
-                    openedLettersIndexes.append(i)
+                    openedLettersIndexes.insert(i)
                 }
             }
             for (i, l) in word.word.enumerated() {
@@ -61,6 +76,7 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
             }
             presenter.openTheLetter(_word.map { String($0) }.joined(separator: " "))
         } else {
+            lifes -= 1
             presenter.takeTheHeart()
         }
     }

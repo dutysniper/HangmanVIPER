@@ -14,12 +14,11 @@ protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
 }
 
 final class SingleGameMainScreenViewController: UIViewController {
-    private let letterButtons = LetterButtonsFactory().createLetterButtons()
     private let hangmanImage = UIImageView()
     private let lifeImage = UIImageView()
     private let wordLabel = UILabel()
     private let wordDefinition = UILabel()
-
+    
     //MARK: - stackView's
     private var letterButtonsStackView: UIStackView!
     private var lifeImagesStackView: UIStackView!
@@ -115,6 +114,7 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         )
         letterButtonsStackView = verticalStackView
     }
+    
     private func setupHangmanImage() {
         hangmanImage.image = UIImage(named: "hangman1")
         
@@ -126,7 +126,7 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
                 hangmanImage.heightAnchor.constraint(equalToConstant: 400),
                 hangmanImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 hangmanImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 30)
-        ]
+            ]
         )
     }
     
@@ -149,15 +149,14 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         lifesStackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(lifesStackView)
         NSLayoutConstraint.activate(
-        [
-         
-            lifesStackView.leadingAnchor.constraint(equalTo: letterButtonsStackView.leadingAnchor, constant: 70),
-            lifesStackView.bottomAnchor.constraint(equalTo: letterButtonsStackView.topAnchor, constant: 8)
-        ]
+            [
+                lifesStackView.leadingAnchor.constraint(equalTo: letterButtonsStackView.leadingAnchor, constant: 70),
+                lifesStackView.bottomAnchor.constraint(equalTo: letterButtonsStackView.topAnchor, constant: 8)
+            ]
         )
         lifeImagesStackView = lifesStackView
     }
-
+    
 }
 
 // MARK: - business
@@ -170,16 +169,6 @@ extension SingleGameMainScreenViewController {
         guard let letter = button.currentTitle else { return }
         
         presenter.letterPressed(letter)
-        
-        // Проверка количества сердечек и количества открытых букв, вызов метода
-        // который заканчивает игру
-        if lifeImagesStackView.arrangedSubviews.count == 0 {
-            presenter.endTheGame(isWin: false)
-        } else if let word = wordLabel.text {
-            if !word.contains("_") {
-                presenter.endTheGame(isWin: true)
-            }
-        }
     }
     
     // Вызывается из презентера, открывает букву(-ы)
