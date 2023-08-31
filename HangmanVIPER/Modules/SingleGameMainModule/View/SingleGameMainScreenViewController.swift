@@ -19,10 +19,10 @@ final class SingleGameMainScreenViewController: UIViewController {
     private let lifeImage = UIImageView()
     private let wordLabel = UILabel()
     private let wordDefinition = UILabel()
- 
-
-        
-
+    
+    
+    
+    
     
     //MARK: - stackView's
     private var letterButtonsStackView: UIStackView!
@@ -171,8 +171,13 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
     }
     
     func showGameOverViewWith(result: Bool) {
-        let gameOverView =  GameOverView(frame: CGRect(x: 400, y: 400, width: 400, height: 400), gameResultLabelText: result ? "Победа!" : "Поражение!", exitAction: exitToMainMenu, newGameAction: startNewGame)
-            
+        let gameOverView = GameOverView(
+            frame: CGRect(x: 400, y: 400, width: 400, height: 400),
+            gameResultLabelText: result ? "Победа!" : "Поражение!",
+            exitAction: exitToMainMenu,
+            newGameAction: startNewGame
+        )
+        
         view.subviews.forEach { subview in
             subview.alpha = 0.5
         }
@@ -183,17 +188,17 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
             [
                 gameOverView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 gameOverView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                        gameOverView.widthAnchor.constraint(equalToConstant: 250),
-                        gameOverView.heightAnchor.constraint(equalToConstant: 250)
-        ]
+                gameOverView.widthAnchor.constraint(equalToConstant: 250),
+                gameOverView.heightAnchor.constraint(equalToConstant: 250)
+            ]
         )
         UIView.animate(withDuration: 0.5) {
             gameOverView.frame.origin.y = self.view.frame.height - gameOverView.frame.height
         }
     }
-    }
-    
-   
+}
+
+
 
 // MARK: - business
 extension SingleGameMainScreenViewController {
@@ -231,6 +236,6 @@ extension SingleGameMainScreenViewController {
     // Забирает сердечко
     func takeTheHeart() {
         guard let lifeImagesStackView else { return }
-        lifeImagesStackView.removeArrangedSubview(lifeImagesStackView.forLastBaselineLayout)
+        lifeImagesStackView.forLastBaselineLayout.removeFromSuperview()
     }
 }
