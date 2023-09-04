@@ -34,6 +34,7 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
         didSet {
             if lifes == 0 {
                 presenter.endTheGame(isWin: false)
+                lifes = 7
             }
         }
     }

@@ -16,6 +16,7 @@ protocol SingleGamePresenterProtocol: AnyObject {
     func takeTheHeart()
     func endTheGame(isWin: Bool)
     func goToMainMenu()
+    func startNewGame()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -28,6 +29,13 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
         self.view = view
     }
     
+    func startNewGame() {
+        interactor.getNewWord { [unowned self] wordModel in
+            view.updateUI()
+            view.setupUI(with: wordModel)
+        }
+    }
+
     func configureView() {
         interactor.getNewWord { [unowned self] wordModel in
             view.setupUI(with: wordModel)
