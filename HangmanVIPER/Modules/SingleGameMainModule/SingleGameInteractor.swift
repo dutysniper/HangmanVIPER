@@ -26,6 +26,8 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
             if openedLettersIndexes.count == word.word.count {
                 isWin.toggle()
                 presenter.endTheGame(isWin: true)
+                lifes = 7
+                openedLettersIndexes = []
             }
         }
     }
@@ -62,7 +64,6 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
     // содержит [1, 3, 5], в презентер будет возвращаться "_о_о_а".
     // Если буквы нет, то вызывается метод, который забирает сердечко.
     func isValidLetter(_ letter: String) {
-        //TODO: сделать так, что б буква изчезала, после того, как ее нажали, и строка сдвигалась
         if word.word.contains(letter) {
             var _word = ""
             for (i, l) in word.word.enumerated() {
