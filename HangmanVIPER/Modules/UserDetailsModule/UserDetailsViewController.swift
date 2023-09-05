@@ -36,6 +36,8 @@ extension UserDetailsViewController: UserDetailsViewControllerProtocol {
     }
     
     //MARK: - setup UI elements
+    
+    //TODO: Почему-то выбор фото открывается только со 2го раза с задержкой
     private func setupUserImage() {
         userProfilePhoto.frame = CGRect(x: 100, y: 100, width: 150, height: 150)
         userProfilePhoto.layer.cornerRadius = userProfilePhoto.frame.size.width / 2
@@ -68,7 +70,7 @@ extension UserDetailsViewController: UserDetailsViewControllerProtocol {
         print("Финальный метод обновления фото")
         userProfilePhoto.image = image
        }
-    func setupUserNameLabel() {
+    private func setupUserNameLabel() {
         userNameLabel.text = "Steve Jobs"
         userNameLabel.font = UIFont.systemFont(ofSize: 36)
         userNameLabel.textColor = .black

@@ -12,7 +12,6 @@ protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
     func openTheLetter(_ word: String)
     func takeTheHeart()
     func showGameOverViewWith(result: Bool)
-    func updateUI()
 }
 
 final class SingleGameMainScreenViewController: UIViewController {
@@ -59,21 +58,8 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         navigationController.pushViewController(SingleGameMainScreenViewController(), animated: false)
     }
     
-    func startNewGame() {
-        presenter.startNewGame()
-    }
-    
     func exitToMainMenu() {
         presenter.goToMainMenu()
-    }
-    
-    func updateUI() {
-        view.alpha = 1
-        view.subviews.forEach { subview in
-            subview.isHidden = true
-            subview.removeFromSuperview()
-        }
-        print("subview count: \(view.subviews.count)")
     }
     
     func setupWord(with word: WordModel) {
