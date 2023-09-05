@@ -52,6 +52,13 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         setupLifes()
     }
     
+    // MARK: - Метод который сбрасывает вьюконтроллер
+    func resetGame() {
+        guard let navigationController else { return }
+        navigationController.popViewController(animated: false)
+        navigationController.pushViewController(SingleGameMainScreenViewController(), animated: false)
+    }
+    
     func startNewGame() {
         presenter.startNewGame()
     }
@@ -186,12 +193,16 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
             frame: CGRect(x: 400, y: 400, width: 400, height: 400),
             gameResultLabelText: result ? "Победа!" : "Поражение!",
             exitAction: exitToMainMenu,
-            newGameAction: startNewGame
+            newGameAction: resetGame
         )
+        // MARK: - Тут добавил бекграунд и закомментил вариант ниже и сверху в newGameAction вставил resetGame
+        let backgroundView = UIView(frame: UIScreen.main.bounds)
+        backgroundView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        view.addSubview(backgroundView)
         
-        view.subviews.forEach { subview in
-            subview.alpha = 0.5
-        }
+        //        view.subviews.forEach { subview in
+        //            subview.alpha = 0.5
+        //        }
         
         gameOverView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gameOverView)
