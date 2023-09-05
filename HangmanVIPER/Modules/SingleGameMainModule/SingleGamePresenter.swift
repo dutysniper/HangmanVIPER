@@ -11,6 +11,12 @@ protocol SingleGamePresenterProtocol: AnyObject {
     var router: SingleGameRouterProtocol! { get set }
     init(view: SingleGameMainScreenViewControllerProtocol)
     func configureView()
+    func letterPressed(_ letter: String)
+    func openTheLetter(_ word: String)
+    func takeTheHeart()
+    func endTheGame(isWin: Bool)
+    func goToMainMenu()
+    func startNewGame()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -23,9 +29,46 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
         self.view = view
     }
     
-    func configureView() {
-        interactor.getWord { [unowned self] wordModel in
+    func startNewGame() {
+        interactor.getNewWord { [unowned self] wordModel in
+            view.updateUI()
             view.setupUI(with: wordModel)
         }
     }
+
+    func configureView() {
+        interactor.getNewWord { [unowned self] wordModel in
+            view.setupUI(with: wordModel)
+        }
+    }
+    
+    // Нажалась буква
+    func letterPressed(_ letter: String) {
+        interactor.isValidLetter(letter)
+    }
+    
+    // Открывает букву во вью
+    func openTheLetter(_ word: String) {
+        view.openTheLetter(word)
+    }
+    
+    // Забирает сердечко
+    func takeTheHeart() {
+        view.takeTheHeart()
+    }
+    
+    // Срабатывает при угадывании слова или когда кончились сердечки
+    func endTheGame(isWin: Bool) {
+        isWin
+        ? print("Победа")
+        
+        : print("Поражение")
+        view.showGameOverViewWith(result: isWin)
+        // Тут алерт или что-то другое
+    }
+    
+    func goToMainMenu() {
+        router.closeTheView()
+    }
+    
 }

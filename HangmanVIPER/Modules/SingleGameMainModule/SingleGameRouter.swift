@@ -8,15 +8,22 @@
 import UIKit
 
 protocol SingleGameRouterProtocol: AnyObject {
-    init(view: SingleGameMainScreenViewController, presenter: SingleGamePresenter)
+    init(view: SingleGameMainScreenViewControllerProtocol)
+    func closeTheView()
 }
 
 final class SingleGameRouter: SingleGameRouterProtocol {
-    unowned var view: SingleGameMainScreenViewController
-    unowned var presenter: SingleGamePresenter
+    unowned var view: SingleGameMainScreenViewControllerProtocol
     
-    init(view: SingleGameMainScreenViewController, presenter: SingleGamePresenter) {
+    init(view: SingleGameMainScreenViewControllerProtocol) {
         self.view = view
-        self.presenter = presenter
     }
+    
+    func closeTheView() {
+        if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+            navigationController.popViewController(animated: true)
+        }
+    }
+    
+    
 }

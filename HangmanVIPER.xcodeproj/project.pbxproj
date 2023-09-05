@@ -31,6 +31,7 @@
 		914ACAE82A8CE794000B53AB /* UserDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE72A8CE794000B53AB /* UserDetailsRouter.swift */; };
 		914ACAEA2A8CE7A5000B53AB /* UserDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */; };
 		914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */; };
+		914ACAF12A9FDA00000B53AB /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAF02A9FDA00000B53AB /* GameOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		914ACAE72A8CE794000B53AB /* UserDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRouter.swift; sourceTree = "<group>"; };
 		914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsConfigurator.swift; sourceTree = "<group>"; };
 		914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonsFactory.swift; sourceTree = "<group>"; };
+		914ACAF02A9FDA00000B53AB /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +199,7 @@
 		914ACAC92A83B595000B53AB /* SingleGameMainModule */ = {
 			isa = PBXGroup;
 			children = (
-				914ACACC2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift */,
+				914ACAEF2A9FD9D8000B53AB /* View */,
 				914ACAD32A8B6FFF000B53AB /* SingleGameEntity.swift */,
 				0751CBAB2A8E7239004FA43B /* SingleGameConfigurator.swift */,
 				0751CBAD2A8E72FC004FA43B /* SingleGamePresenter.swift */,
@@ -217,6 +219,15 @@
 				914ACADA2A8BC60C000B53AB /* UserDetailsViewController.swift */,
 			);
 			path = UserDetailsModule;
+			sourceTree = "<group>";
+		};
+		914ACAEF2A9FD9D8000B53AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				914ACACC2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift */,
+				914ACAF02A9FDA00000B53AB /* GameOverView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +313,7 @@
 				0751CBAE2A8E72FC004FA43B /* SingleGamePresenter.swift in Sources */,
 				914ACACD2A83B5FF000B53AB /* SingleGameMainScreenViewController.swift in Sources */,
 				914ACAE82A8CE794000B53AB /* UserDetailsRouter.swift in Sources */,
+				914ACAF12A9FDA00000B53AB /* GameOverView.swift in Sources */,
 				914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */,
 				914ACAD42A8B6FFF000B53AB /* SingleGameEntity.swift in Sources */,
 				0751CBAC2A8E7239004FA43B /* SingleGameConfigurator.swift in Sources */,
