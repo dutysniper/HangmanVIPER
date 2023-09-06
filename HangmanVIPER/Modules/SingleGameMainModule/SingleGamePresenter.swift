@@ -16,6 +16,7 @@ protocol SingleGamePresenterProtocol: AnyObject {
     func takeTheHeart()
     func endTheGame(isWin: Bool)
     func goToMainMenu()
+    func reloadVC()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -56,11 +57,14 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
         
         : print("Поражение")
         view.showGameOverViewWith(result: isWin)
-        // Тут алерт или что-то другое
     }
     
     func goToMainMenu() {
         router.closeTheView()
     }
     
+    // Restart game
+    func reloadVC() {
+        router.reloadVC()
+    }
 }

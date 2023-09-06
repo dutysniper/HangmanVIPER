@@ -26,8 +26,6 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
             if openedLettersIndexes.count == word.word.count {
                 isWin.toggle()
                 presenter.endTheGame(isWin: true)
-                lifes = 7
-                openedLettersIndexes = []
             }
         }
     }
@@ -36,7 +34,6 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
         didSet {
             if lifes == 0 {
                 presenter.endTheGame(isWin: false)
-                lifes = 7
             }
         }
     }

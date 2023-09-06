@@ -52,9 +52,8 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         setupLifes()
     }
     
-    // MARK: - Метод который сбрасывает вьюконтроллер
-    func singlePlayerButtonAction() {
-        presenter.router.reloadVC()
+    func restartGame() {
+        presenter.reloadVC()
     }
     
     func exitToMainMenu() {
@@ -87,7 +86,6 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
     private func setupLettersButtons() {
         let letterButtons = LetterButtonsFactory().createLetterButtons()
         
-        // Добавил в кнопки нажатия
         letterButtons.forEach {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(letterPressed(_ :)))
             $0.addGestureRecognizer(tapGesture)
@@ -178,16 +176,13 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
             frame: CGRect(x: 400, y: 400, width: 400, height: 400),
             gameResultLabelText: result ? "Победа!" : "Поражение!",
             exitAction: exitToMainMenu,
-            newGameAction: singlePlayerButtonAction
+            newGameAction: restartGame
         )
-        // MARK: - Тут добавил бекграунд и закомментил вариант ниже и сверху в newGameAction вставил resetGame
+        
+        // Некликабельный фон
         let backgroundView = UIView(frame: UIScreen.main.bounds)
         backgroundView.backgroundColor = UIColor(white: 1, alpha: 0.5)
         view.addSubview(backgroundView)
-        
-        //        view.subviews.forEach { subview in
-        //            subview.alpha = 0.5
-        //        }
         
         gameOverView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gameOverView)
@@ -235,6 +230,7 @@ extension SingleGameMainScreenViewController {
             })
         }
     }
+    
     // Вызывается из презентера, открывает букву(-ы)
     func openTheLetter(_ word: String) {
         wordLabel.text = word
