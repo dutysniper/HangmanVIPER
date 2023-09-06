@@ -12,6 +12,7 @@ protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
     func openTheLetter(_ word: String)
     func takeTheHeart()
     func showGameOverViewWith(result: Bool)
+
 }
 
 final class SingleGameMainScreenViewController: UIViewController {
@@ -52,10 +53,8 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
     }
     
     // MARK: - Метод который сбрасывает вьюконтроллер
-    func resetGame() {
-        guard let navigationController else { return }
-        navigationController.popViewController(animated: false)
-        navigationController.pushViewController(SingleGameMainScreenViewController(), animated: false)
+    func singlePlayerButtonAction() {
+        presenter.router.reloadVC()
     }
     
     func exitToMainMenu() {
@@ -179,7 +178,7 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
             frame: CGRect(x: 400, y: 400, width: 400, height: 400),
             gameResultLabelText: result ? "Победа!" : "Поражение!",
             exitAction: exitToMainMenu,
-            newGameAction: resetGame
+            newGameAction: singlePlayerButtonAction
         )
         // MARK: - Тут добавил бекграунд и закомментил вариант ниже и сверху в newGameAction вставил resetGame
         let backgroundView = UIView(frame: UIScreen.main.bounds)

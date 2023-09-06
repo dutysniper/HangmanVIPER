@@ -10,6 +10,7 @@ import UIKit
 protocol SingleGameRouterProtocol: AnyObject {
     init(view: SingleGameMainScreenViewControllerProtocol)
     func closeTheView()
+    func reloadVC()
 }
 
 final class SingleGameRouter: SingleGameRouterProtocol {
@@ -24,6 +25,10 @@ final class SingleGameRouter: SingleGameRouterProtocol {
             navigationController.popViewController(animated: true)
         }
     }
-    
-    
+    func reloadVC() {
+        if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+//            navigationController.popViewController(animated: true)
+            navigationController.pushViewController(SingleGameMainScreenViewController(), animated: false)
+        }
+    }
 }
