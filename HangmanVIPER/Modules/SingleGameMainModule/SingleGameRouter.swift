@@ -27,7 +27,7 @@ final class SingleGameRouter: SingleGameRouterProtocol {
     }
     func reloadVC() {
         if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
-//            navigationController.popViewController(animated: true)
+            navigationController.popViewController(animated: false)
             navigationController.pushViewController(SingleGameMainScreenViewController(), animated: false)
         }
     }
