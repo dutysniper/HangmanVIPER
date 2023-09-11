@@ -9,9 +9,7 @@ import UIKit
 
 protocol SingleGameRouterProtocol: AnyObject {
     init(view: SingleGameMainScreenViewControllerProtocol)
-    // close()/closeView()
     func closeTheView()
-    func reloadVC()
 }
 
 final class SingleGameRouter: SingleGameRouterProtocol {
@@ -24,13 +22,6 @@ final class SingleGameRouter: SingleGameRouterProtocol {
     func closeTheView() {
         if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
             navigationController.popViewController(animated: true)
-        }
-    }
-    // перепушить контроллер для обновления экрана - практика не самая лучшая. Лучше подумать над обновлением UI руками, чем делать такое
-    func reloadVC() {
-        if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
-            navigationController.popViewController(animated: false)
-            navigationController.pushViewController(SingleGameMainScreenViewController(), animated: false)
         }
     }
 }

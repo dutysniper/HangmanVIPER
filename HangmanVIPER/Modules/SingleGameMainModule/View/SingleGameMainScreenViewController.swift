@@ -54,7 +54,7 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
     }
     
     func restartGame() {
-        presenter.reloadVC()
+        presenter.reloadUI()
     }
     
     func exitToMainMenu() {

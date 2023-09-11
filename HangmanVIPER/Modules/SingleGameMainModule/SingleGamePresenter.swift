@@ -17,7 +17,7 @@ protocol SingleGamePresenterProtocol: AnyObject {
     func takeTheHeart()
     func endTheGame(isWin: Bool)
     func goToMainMenu()
-    func reloadVC()
+    func reloadUI()
 }
 
 final class SingleGamePresenter: SingleGamePresenterProtocol {
@@ -62,7 +62,7 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
     }
     
     // Restart game
-    func reloadVC() {
+    func reloadUI() {
         view.resetUI()
         configureView()
     }
