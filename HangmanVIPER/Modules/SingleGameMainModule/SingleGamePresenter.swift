@@ -53,11 +53,7 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
     
     // Срабатывает при угадывании слова или когда кончились сердечки
     func endTheGame(isWin: Bool) {
-        // тернарный оператор, как по мне, лучше в одну строку. Читать проще
-        isWin
-        ? print("Победа")
-        
-        : print("Поражение")
+        isWin ? print("Победа") : print("Поражение")
         view.showGameOverViewWith(result: isWin)
     }
     
@@ -67,6 +63,7 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
     
     // Restart game
     func reloadVC() {
-        router.reloadVC()
+        view.resetUI()
+        configureView()
     }
 }

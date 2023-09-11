@@ -12,6 +12,7 @@ protocol SingleGameMainScreenViewControllerProtocol: AnyObject {
     func openTheLetter(_ word: String)
     func takeTheHeart()
     func showGameOverViewWith(result: Bool)
+    func resetUI()
 
 }
 
@@ -241,4 +242,11 @@ extension SingleGameMainScreenViewController {
         guard let lifeImagesStackView else { return }
         lifeImagesStackView.forLastBaselineLayout.removeFromSuperview()
     }
+    
+    func resetUI() {
+        view.subviews.forEach { subview in
+            subview.removeFromSuperview()
+        }
+    }
+    
 }
