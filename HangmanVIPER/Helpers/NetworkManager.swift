@@ -10,6 +10,7 @@ import Foundation
 final class NetworkManager {
     static let shared = NetworkManager()
     
+    // не нужен
     private init() {}
     
     enum NetworkError: Error {

@@ -13,7 +13,7 @@ protocol UserDetailsRouterProtocol {
 }
 
 final class UserDetailsRouter: NSObject, UserDetailsRouterProtocol {
-    weak var viewController: UserDetailsViewController! //Тут классы или протоколы должны быть?
+    weak var viewController: UserDetailsViewController! //Тут классы или протоколы должны быть? // Протоколы(интерфейсы) всё общение между модулями происходит сугубо на интерфейсах(протоколах)
     weak var presenter: UserDetailsPresenter!           //Тут классы или протоколы должны быть?
     
     required init(viewController: UserDetailsViewController, presenter: UserDetailsPresenter) {

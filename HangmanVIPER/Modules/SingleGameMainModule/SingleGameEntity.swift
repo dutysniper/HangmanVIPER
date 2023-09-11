@@ -16,7 +16,7 @@ struct SingleGameEntity {
         self.gameResult = gameResult
     }
 }
-
+// для сетевых моделей все поля лучше использовать как опциональные типы. Даже если контракт не предусматривает наличие опционального типа данных
 struct Word: Codable {
     let definition: String
 }

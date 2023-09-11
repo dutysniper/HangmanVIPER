@@ -5,9 +5,7 @@
 //  Created by Константин Натаров on 29.07.2023.
 //
 
-protocol ModeSelectionInteractorProtocol {
-    
-}
+protocol ModeSelectionInteractorProtocol { }
 
 final class ModeSelectionInteractor: ModeSelectionInteractorProtocol {
     weak var presenter: ModeSelectionPresenterProtocol!
@@ -15,5 +13,4 @@ final class ModeSelectionInteractor: ModeSelectionInteractorProtocol {
     required init(presenter: ModeSelectionPresenterProtocol!) {
         self.presenter = presenter
     }
-  
-    }
+}

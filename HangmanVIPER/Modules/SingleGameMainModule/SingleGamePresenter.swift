@@ -9,6 +9,7 @@ import Foundation
 
 protocol SingleGamePresenterProtocol: AnyObject {
     var router: SingleGameRouterProtocol! { get set }
+    // не нужно описывать инициализатор протоколом
     init(view: SingleGameMainScreenViewControllerProtocol)
     func configureView()
     func letterPressed(_ letter: String)
@@ -52,6 +53,7 @@ final class SingleGamePresenter: SingleGamePresenterProtocol {
     
     // Срабатывает при угадывании слова или когда кончились сердечки
     func endTheGame(isWin: Bool) {
+        // тернарный оператор, как по мне, лучше в одну строку. Читать проще
         isWin
         ? print("Победа")
         

@@ -23,6 +23,7 @@ final class SingleGameInteractor: SingleGameInteractorProtocol {
     // Если все буквы открыты, то игра выиграна
     private var openedLettersIndexes: Set<Int> = [] {
         didSet {
+            // немного шляпа с неймингом. word.word. можно обозвать типа wordModel.word.count - будет получше
             if openedLettersIndexes.count == word.word.count {
                 isWin.toggle()
                 presenter.endTheGame(isWin: true)
