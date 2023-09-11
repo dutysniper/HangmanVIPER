@@ -6,11 +6,11 @@
 //
 
 protocol ModeSelectionConfiguratorProtocol {
-    func configure(with view: ModeSelectionView)
+    func configure(with view: ModeSelectionViewController)
 }
 
 final class ModeSelectionConfigurator: ModeSelectionConfiguratorProtocol {
-    func configure(with view: ModeSelectionView) {
+    func configure(with view: ModeSelectionViewController) {
         let presenter = ModeSelectionPresenter(view: view)
         let interactor = ModeSelectionInteractor(presenter: presenter)
         let router = ModeSelectionRouter(view: view)
