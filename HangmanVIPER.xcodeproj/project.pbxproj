@@ -32,6 +32,7 @@
 		914ACAEA2A8CE7A5000B53AB /* UserDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */; };
 		914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */; };
 		914ACAF12A9FDA00000B53AB /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAF02A9FDA00000B53AB /* GameOverView.swift */; };
+		914ACB2D2AAF971D000B53AB /* RegistrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		914ACAE92A8CE7A5000B53AB /* UserDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsConfigurator.swift; sourceTree = "<group>"; };
 		914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonsFactory.swift; sourceTree = "<group>"; };
 		914ACAF02A9FDA00000B53AB /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		914ACAC12A7588A1000B53AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				914ACB2B2AAF96C9000B53AB /* RegistrationModule */,
 				914ACAD92A8BC5EB000B53AB /* UserDetailsModule */,
 				914ACAC92A83B595000B53AB /* SingleGameMainModule */,
 				914ACAB32A7559B9000B53AB /* ModeSelectionModule */,
@@ -228,6 +231,14 @@
 				914ACAF02A9FDA00000B53AB /* GameOverView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		914ACB2B2AAF96C9000B53AB /* RegistrationModule */ = {
+			isa = PBXGroup;
+			children = (
+				914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */,
+			);
+			path = RegistrationModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +326,7 @@
 				914ACAE82A8CE794000B53AB /* UserDetailsRouter.swift in Sources */,
 				914ACAF12A9FDA00000B53AB /* GameOverView.swift in Sources */,
 				914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */,
+				914ACB2D2AAF971D000B53AB /* RegistrationScreenViewController.swift in Sources */,
 				914ACAD42A8B6FFF000B53AB /* SingleGameEntity.swift in Sources */,
 				0751CBAC2A8E7239004FA43B /* SingleGameConfigurator.swift in Sources */,
 				914ACAA32A7553E2000B53AB /* ModeSelectionViewController.swift in Sources */,
