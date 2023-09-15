@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 
 final class RegistrationScreenViewController: UIViewController {
+    private let buttonFactory = ButtonFactory()
     
     private let firstNameTF = UITextField()
     private let lastNameTF = UITextField()
@@ -26,6 +27,7 @@ final class RegistrationScreenViewController: UIViewController {
     private let aboutRegistrationLabel = UILabel()
     private let aboutRegistrationDetailsLabel = UILabel()
     
+    private var tempTransitButton: UIButton!
     
     private let aboutRegistrationStackView = UIStackView()
     
@@ -33,6 +35,12 @@ final class RegistrationScreenViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupAboutText()
+        setupTempBtn()
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font Names: \(names)" )
+        }
         
     }
 }
@@ -63,6 +71,23 @@ extension RegistrationScreenViewController {
             aboutRegistrationStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
         ]
         )
+    }
+    private func setupTempBtn() {
+        tempTransitButton = buttonFactory.createButton(title: "Главное меню", titleColor: .black, backgroundColor: .white)
+        tempTransitButton.addTarget(self, action: #selector(goToMainMenu), for: .touchUpInside)
+        tempTransitButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tempTransitButton)
+        NSLayoutConstraint.activate(
+            [
+                tempTransitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                tempTransitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+        ]
+        )
+    }
+    @objc func goToMainMenu() {
+        if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+            navigationController.pushViewController(ModeSelectionViewController(), animated: true)
+        }
     }
 }
 

@@ -62,6 +62,7 @@ final class GameOverView: UIView {
     private func setupLabel(with text: String) {
         gameResultLabel.text = text
         gameResultLabel.textColor = .white
+        gameResultLabel.font = UIFont(name: "Supercell-Magic", size: 14)
         
         addSubview(gameResultLabel)
         gameResultLabel.translatesAutoresizingMaskIntoConstraints = false

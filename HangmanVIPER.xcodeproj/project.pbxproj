@@ -33,6 +33,7 @@
 		914ACAEE2A8FE918000B53AB /* LetterButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */; };
 		914ACAF12A9FDA00000B53AB /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACAF02A9FDA00000B53AB /* GameOverView.swift */; };
 		914ACB2D2AAF971D000B53AB /* RegistrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */; };
+		914ACB302AB4A6F6000B53AB /* KZSupercell-Magic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 914ACB2F2AB4A6F6000B53AB /* KZSupercell-Magic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		914ACAED2A8FE918000B53AB /* LetterButtonsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonsFactory.swift; sourceTree = "<group>"; };
 		914ACAF02A9FDA00000B53AB /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenViewController.swift; sourceTree = "<group>"; };
+		914ACB2F2AB4A6F6000B53AB /* KZSupercell-Magic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KZSupercell-Magic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		914ACAC22A7588C6000B53AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				914ACB2E2AB4A6E0000B53AB /* Fonts */,
 				914ACAE12A8BD48C000B53AB /* wordListWithDefinition.json */,
 				914ACAA72A7553E2000B53AB /* Assets.xcassets */,
 				914ACAD02A8B6CEC000B53AB /* wordList.txt */,
@@ -241,6 +244,14 @@
 			path = RegistrationModule;
 			sourceTree = "<group>";
 		};
+		914ACB2E2AB4A6E0000B53AB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				914ACB2F2AB4A6F6000B53AB /* KZSupercell-Magic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,6 +313,7 @@
 				914ACAAB2A7553E2000B53AB /* LaunchScreen.storyboard in Resources */,
 				914ACAE22A8BD48C000B53AB /* wordListWithDefinition.json in Resources */,
 				914ACAA82A7553E2000B53AB /* Assets.xcassets in Resources */,
+				914ACB302AB4A6F6000B53AB /* KZSupercell-Magic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
