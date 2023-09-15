@@ -17,7 +17,7 @@ final class LetterButtonsFactory {
             letterButton.backgroundColor = .none
             letterButton.setTitleColor(.black, for: .normal)
             letterButtons.append(letterButton)
-            letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            letterButton.titleLabel?.font = UIFont(name: "Supercell-Magic", size: 25)
         }
         return letterButtons
     }

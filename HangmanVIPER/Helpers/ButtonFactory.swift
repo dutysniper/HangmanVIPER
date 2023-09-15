@@ -14,6 +14,7 @@ final class ButtonFactory {
         
         button.setTitle(title, for: .normal)
         button.setTitleColor(titleColor, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Supercell-Magic", size: 12)
         button.backgroundColor = backgroundColor
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true

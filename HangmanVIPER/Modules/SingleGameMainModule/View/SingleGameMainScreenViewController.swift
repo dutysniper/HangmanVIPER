@@ -65,7 +65,7 @@ extension SingleGameMainScreenViewController: SingleGameMainScreenViewController
         let labelsStackView = UIStackView(arrangedSubviews: [wordLabel, wordDefinition])
         
         wordLabel.text = word.word.map { _ in "_" }.joined(separator: " ")
-        wordLabel.font = UIFont.systemFont(ofSize: 30)
+        wordLabel.font = UIFont(name: "Supercell-Magic", size: 25)
         wordDefinition.text = word.entry.definition
         wordDefinition.numberOfLines = 0
         wordDefinition.isHidden = true // скрытие подсказки
