@@ -68,7 +68,7 @@ final class GameOverView: UIView {
         gameResultLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [
-                gameResultLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+                gameResultLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
                 gameResultLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ]
         )
