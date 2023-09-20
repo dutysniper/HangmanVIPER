@@ -166,7 +166,6 @@
 		914ACAB42A7559F1000B53AB /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */,
 				914ACAB92A755A8A000B53AB /* ModeSelectionRouter.swift */,
 			);
 			path = Router;
@@ -273,6 +272,7 @@
 		914ACB2B2AAF96C9000B53AB /* RegistrationModule */ = {
 			isa = PBXGroup;
 			children = (
+				914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */,
 			);
 			path = RegistrationModule;
 			sourceTree = "<group>";
