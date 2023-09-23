@@ -50,6 +50,10 @@
 		914ACB4D2AB4AE17000B53AB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 914ACB4C2AB4AE17000B53AB /* FirebaseMessaging */; };
 		914ACB4F2AB4AE17000B53AB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 914ACB4E2AB4AE17000B53AB /* FirebaseStorage */; };
 		914ACB512AB4AE17000B53AB /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 914ACB502AB4AE17000B53AB /* FirebaseStorageCombine-Community */; };
+		914ACB532ABF617D000B53AB /* RegistrationScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACB522ABF617D000B53AB /* RegistrationScreenRouter.swift */; };
+		914ACB552ABF619D000B53AB /* RegistrationScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACB542ABF619D000B53AB /* RegistrationScreenPresenter.swift */; };
+		914ACB572ABF61B6000B53AB /* RegistrationScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACB562ABF61B6000B53AB /* RegistrationScreenConfigurator.swift */; };
+		914ACB592ABF61DC000B53AB /* RegistrationScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914ACB582ABF61DC000B53AB /* RegistrationScreenInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +88,10 @@
 		914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenViewController.swift; sourceTree = "<group>"; };
 		914ACB2F2AB4A6F6000B53AB /* KZSupercell-Magic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KZSupercell-Magic.ttf"; sourceTree = "<group>"; };
 		914ACB312AB4ADC9000B53AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		914ACB522ABF617D000B53AB /* RegistrationScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenRouter.swift; sourceTree = "<group>"; };
+		914ACB542ABF619D000B53AB /* RegistrationScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenPresenter.swift; sourceTree = "<group>"; };
+		914ACB562ABF61B6000B53AB /* RegistrationScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenConfigurator.swift; sourceTree = "<group>"; };
+		914ACB582ABF61DC000B53AB /* RegistrationScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +281,10 @@
 			isa = PBXGroup;
 			children = (
 				914ACB2C2AAF971D000B53AB /* RegistrationScreenViewController.swift */,
+				914ACB522ABF617D000B53AB /* RegistrationScreenRouter.swift */,
+				914ACB542ABF619D000B53AB /* RegistrationScreenPresenter.swift */,
+				914ACB562ABF61B6000B53AB /* RegistrationScreenConfigurator.swift */,
+				914ACB582ABF61DC000B53AB /* RegistrationScreenInteractor.swift */,
 			);
 			path = RegistrationModule;
 			sourceTree = "<group>";
@@ -383,8 +395,11 @@
 				914ACAC02A755DCC000B53AB /* ModeSelectionInteractor.swift in Sources */,
 				914ACABA2A755A8A000B53AB /* ModeSelectionRouter.swift in Sources */,
 				914ACADB2A8BC60C000B53AB /* UserDetailsViewController.swift in Sources */,
+				914ACB572ABF61B6000B53AB /* RegistrationScreenConfigurator.swift in Sources */,
+				914ACB532ABF617D000B53AB /* RegistrationScreenRouter.swift in Sources */,
 				914ACAC82A825A26000B53AB /* ModeSelectionConfigurator.swift in Sources */,
 				914ACAC52A75890C000B53AB /* ButtonFactory.swift in Sources */,
+				914ACB592ABF61DC000B53AB /* RegistrationScreenInteractor.swift in Sources */,
 				914ACAE42A8CE76F000B53AB /* UserDetailsPresenter.swift in Sources */,
 				914ACAD82A8B7701000B53AB /* NetworkManager.swift in Sources */,
 				0751CBAE2A8E72FC004FA43B /* SingleGamePresenter.swift in Sources */,
@@ -400,6 +415,7 @@
 				914ACA9F2A7553E2000B53AB /* AppDelegate.swift in Sources */,
 				914ACAA12A7553E2000B53AB /* SceneDelegate.swift in Sources */,
 				0751CBB22A903233004FA43B /* SingleGameRouter.swift in Sources */,
+				914ACB552ABF619D000B53AB /* RegistrationScreenPresenter.swift in Sources */,
 				914ACABE2A755D09000B53AB /* ModeSelectionPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

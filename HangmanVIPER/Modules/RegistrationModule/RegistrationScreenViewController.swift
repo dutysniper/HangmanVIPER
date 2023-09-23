@@ -8,7 +8,11 @@
 import UIKit
 import SwiftUI
 
-final class RegistrationScreenViewController: UIViewController {
+protocol RegistrationScreenViewControllerProtocol: AnyObject {
+    func setupUI()
+}
+
+final class RegistrationScreenViewController: UIViewController, RegistrationScreenViewControllerProtocol {
     private let buttonFactory = ButtonFactory()
     
     private let firstNameTF = UITextField()
@@ -28,28 +32,29 @@ final class RegistrationScreenViewController: UIViewController {
     private let aboutRegistrationDetailsLabel = UILabel()
     
     private var tempTransitButton: UIButton!
+    private var registrationButton: UIButton!
     
     private let aboutRegistrationStackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setupUI()
+    }
+}
+
+//MARK: - setupUI
+extension RegistrationScreenViewController {
+    func setupUI() {
         setupAboutText()
         setupTempBtn()
         setupLoginStackView()
         setupPasswordStackView()
         setupRepeatedPWStackView()
         setupEmailStackView()
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font Names: \(names)" )
-        }
-        
+        registrationButtonSetup()
     }
-}
-
-//MARK: - setupUI
-extension RegistrationScreenViewController {
+    
     func setupAboutText() {
         aboutRegistrationLabel.text = "Создай свой аккаунт"
         aboutRegistrationLabel.font = UIFont.systemFont(ofSize: 26)
@@ -197,6 +202,19 @@ extension RegistrationScreenViewController {
             [
                 emailStackView.topAnchor.constraint(equalTo: repeatedPasswordTF.bottomAnchor, constant: 16),
                 emailStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16)
+        ]
+        )
+    }
+    
+    private func registrationButtonSetup() {
+        registrationButton = buttonFactory.createButton(title: "Зарегистрироваться", titleColor: .white, backgroundColor: .blue)
+        
+        registrationButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(registrationButton)
+        NSLayoutConstraint.activate(
+            [
+                registrationButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                registrationButton.topAnchor.constraint(equalTo: emailTF.bottomAnchor, constant: 16)
         ]
         )
     }

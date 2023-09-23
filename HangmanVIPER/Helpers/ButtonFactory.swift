@@ -19,9 +19,8 @@ final class ButtonFactory {
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
         button.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        button.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        button.widthAnchor.constraint(lessThanOrEqualToConstant: 400).isActive = true
-        button.layer.cornerRadius = 12
+        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        button.widthAnchor.constraint(greaterThanOrEqualToConstant: 400).isActive = true
         button.layer.masksToBounds = false // Разрешим тень выходить за пределы кнопки
         button.layer.shadowColor = UIColor.gray.cgColor
         button.layer.shadowOpacity = 0.8
